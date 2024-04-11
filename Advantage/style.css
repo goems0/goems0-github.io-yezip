@@ -1,0 +1,250 @@
+.advantage,
+.advantage * {
+  box-sizing: border-box;
+}
+.advantage {
+  background: #ffffff;
+  height: 1145px;
+  position: relative;
+  overflow: hidden;
+}
+.headline {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 624px;
+  position: absolute;
+  left: 67px;
+  top: 622px;
+}
+.advantage2 {
+  color: #000000;
+  text-align: left;
+  font-family: var(--title-font-family, "Inter-Bold", sans-serif);
+  font-size: var(--title-font-size, 64px);
+  line-height: var(--title-line-height);
+  font-weight: var(--title-font-weight, 700);
+  position: relative;
+  align-self: stretch;
+}
+.div {
+  color: #828282;
+  text-align: left;
+  font-family: var(--subheading-font-family, "Inter-Regular", sans-serif);
+  font-size: var(--subheading-font-size, 24px);
+  line-height: var(--subheading-line-height, 150%);
+  font-weight: var(--subheading-font-weight, 400);
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.div2 {
+  color: #000000;
+  text-align: left;
+  font-family: var(--body-text-font-family, "Inter-Medium", sans-serif);
+  font-size: var(--body-text-font-size, 20px);
+  line-height: var(--body-text-line-height, 150%);
+  font-weight: var(--body-text-font-weight, 500);
+  position: relative;
+  width: 624px;
+}
+.div-2-span {
+  color: #000000;
+  font-family: var(--body-text-font-family, "Inter-Medium", sans-serif);
+  font-size: var(--body-text-font-size, 20px);
+  line-height: var(--body-text-line-height, 150%);
+  font-weight: var(--body-text-font-weight, 500);
+}
+.div-2-span2 {
+  color: #000000;
+  font-family: var(--body-text-font-family, "Inter-Medium", sans-serif);
+  font-size: var(--body-text-font-size, 20px);
+  line-height: var(--body-text-line-height, 150%);
+  font-weight: var(--body-text-font-weight, 500);
+}
+.div-2-span3 {
+  color: #000000;
+  font-family: var(--body-text-font-family, "Inter-Medium", sans-serif);
+  font-size: var(--body-text-font-size, 20px);
+  line-height: var(--body-text-line-height, 150%);
+  font-weight: var(--body-text-font-weight, 500);
+}
+.div-2-span4 {
+  color: #000000;
+  font-family: var(--body-text-font-family, "Inter-Medium", sans-serif);
+  font-size: var(--body-text-font-size, 20px);
+  line-height: var(--body-text-line-height, 150%);
+  font-weight: var(--body-text-font-weight, 500);
+}
+.div-2-span5 {
+  color: #000000;
+  font-family: var(--body-text-font-family, "Inter-Medium", sans-serif);
+  font-size: var(--body-text-font-size, 20px);
+  line-height: var(--body-text-line-height, 150%);
+  font-weight: var(--body-text-font-weight, 500);
+}
+.div-2-span6 {
+  color: #000000;
+  font-family: var(--body-text-font-family, "Inter-Medium", sans-serif);
+  font-size: var(--body-text-font-size, 20px);
+  line-height: var(--body-text-line-height, 150%);
+  font-weight: var(--body-text-font-weight, 500);
+}
+.div-2-span7 {
+  color: #000000;
+  font-family: var(--body-text-font-family, "Inter-Medium", sans-serif);
+  font-size: var(--body-text-font-size, 20px);
+  line-height: var(--body-text-line-height, 150%);
+  font-weight: var(--body-text-font-weight, 500);
+}
+.div-2-span8 {
+  color: #000000;
+  font-family: var(--body-text-font-family, "Inter-Medium", sans-serif);
+  font-size: var(--body-text-font-size, 20px);
+  line-height: var(--body-text-line-height, 150%);
+  font-weight: var(--body-text-font-weight, 500);
+}
+.div-2-span9 {
+  color: #000000;
+  font-family: var(--body-text-font-family, "Inter-Medium", sans-serif);
+  font-size: var(--body-text-font-size, 20px);
+  line-height: var(--body-text-line-height, 150%);
+  font-weight: var(--body-text-font-weight, 500);
+}
+.div-2-span10 {
+  color: #000000;
+  font-family: var(--body-text-font-family, "Inter-Medium", sans-serif);
+  font-size: var(--body-text-font-size, 20px);
+  line-height: var(--body-text-line-height, 150%);
+  font-weight: var(--body-text-font-weight, 500);
+}
+.div-2-span11 {
+  color: #000000;
+  font-family: var(--body-text-font-family, "Inter-Medium", sans-serif);
+  font-size: var(--body-text-font-size, 20px);
+  line-height: var(--body-text-line-height, 150%);
+  font-weight: var(--body-text-font-weight, 500);
+}
+.div-2-span12 {
+  color: #000000;
+  font-family: var(--body-text-font-family, "Inter-Medium", sans-serif);
+  font-size: var(--body-text-font-size, 20px);
+  line-height: var(--body-text-line-height, 150%);
+  font-weight: var(--body-text-font-weight, 500);
+}
+.navigation {
+  background: #ffffff;
+  height: 164px;
+  position: absolute;
+  right: 0px;
+  left: 0px;
+  top: 0px;
+  overflow: hidden;
+}
+.items {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-m, 48px);
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  right: 80px;
+  top: 56px;
+}
+.introduction {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Medium", sans-serif;
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 500;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.characteristic {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Medium", sans-serif;
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 500;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.advantage3 {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Medium", sans-serif;
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 500;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.zip {
+  color: #000000;
+  text-align: left;
+  font-family: var(--body-text-font-family, "Inter-Medium", sans-serif);
+  font-size: var(--body-text-font-size, 20px);
+  line-height: var(--body-text-line-height, 150%);
+  font-weight: var(--body-text-font-weight, 500);
+  position: absolute;
+  left: 80px;
+  top: 67px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+._4-1 {
+  width: 1305px;
+  height: 460px;
+  position: absolute;
+  left: 67px;
+  top: 115px;
+  object-fit: cover;
+}
+._12-1 {
+  width: 657px;
+  height: 726px;
+  position: absolute;
+  left: 846px;
+  top: 321px;
+  object-fit: cover;
+}
+._345-1 {
+  width: 547px;
+  height: 474px;
+  position: absolute;
+  left: 664px;
+  top: 699px;
+  object-fit: cover;
+}
+._35-1 {
+  width: 432px;
+  height: 402px;
+  position: absolute;
+  left: 11px;
+  top: 259px;
+  object-fit: cover;
+}
+._253-1 {
+  width: 350px;
+  height: 704px;
+  position: absolute;
+  left: 1054px;
+  top: 525px;
+  object-fit: cover;
+}
+
+a:link {color:#000000;}
+a:visited{color:#000000;}
