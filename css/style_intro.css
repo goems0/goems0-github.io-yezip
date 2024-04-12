@@ -11,15 +11,10 @@
 .intro_img1 {
   width: 100%;
   height: 534px;
-}
-.intro_img2 {
-  width: 50%;
-  height: 534px;
-  /* position: absolute;
-  left: 445px;
-  top: 147px;
-  box-shadow: 20px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  object-fit: cover; */
+  position: absolute;
+  left: 0px;
+  top: 140px;
+  object-fit: cover;
 }
 .headline {
   display: flex;
