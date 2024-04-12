@@ -8,21 +8,18 @@
   position: relative;
   overflow: hidden;
 }
-.img1 {
-  width: 781px;
-  height: 717px;
-  position: absolute;
-  left: 579px;
-  top: 137px;
-  object-fit: cover;
+.intro_img1 {
+  width: 100%;
+  height: 534px;
 }
-.img2 {
-  width: 344px;
-  height: 382px;
-  position: absolute;
-  left: 821px;
-  top: 300px;
-  object-fit: cover;
+.intro_img2 {
+  width: 50%;
+  height: 534px;
+  /* position: absolute;
+  left: 445px;
+  top: 147px;
+  box-shadow: 20px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  object-fit: cover; */
 }
 .headline {
   display: flex;
@@ -38,10 +35,9 @@
 .introduction2 {
   color: #000000;
   text-align: left;
-  font-family: var(--title-font-family, "Inter-Bold", sans-serif);
-  font-size: var(--title-font-size, 64px);
-  line-height: var(--title-line-height);
-  font-weight: var(--title-font-weight, 700);
+  font-family: "Kodchasan-Bold", sans-serif;
+  font-size: 64px;
+  font-weight: 700;
   position: relative;
   align-self: stretch;
 }
@@ -157,6 +153,5 @@
   align-items: center;
   justify-content: flex-start;
 }
-
 a:link {color:#000000;}
 a:visited{color:#000000;}

@@ -16,7 +16,7 @@
   justify-content: flex-start;
   width: 624px;
   position: absolute;
-  left: 80px;
+  left: 7%;
   top: 629px;
 }
 .characteristic2 {
@@ -121,22 +121,45 @@
   align-items: center;
   justify-content: flex-start;
 }
-.img3 {
-  opacity: 0.4699999988079071;
-  width: 696px;
-  height: 786px;
+.a-href-https-kr-freepik-com-icons-ec-95-85-ec-88-98-hj-studio-a {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
   position: absolute;
-  left: 545px;
-  top: 116px;
-  mix-blend-mode: multiply;
+  left: 69px;
+  top: 565px;
+}
+.char_img1 {
+  width: 318px;
+  height: 361px;
+  position: absolute;
+  left: 170px;
+  top: 166px;
   object-fit: cover;
 }
-.img4 {
-  width: 734px;
-  height: 519px;
+.char_img2 {
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px;
+  width: 583px;
+  height: 660px;
   position: absolute;
-  left: 673px;
-  top: 552px;
+  /* left: 797px; */
+  right: 5%;
+  top: 427px;
+  filter: blur(2px);
+  object-fit: cover;
+}
+.char_img3 {
+  width: 725px;
+  height: 866px;
+  position: absolute;
+  /* left: 594px; */
+  right: 10%;
+  top: 126px;
+  box-shadow: 20px 20px 4px 0px rgba(0, 0, 0, 0.25);
   object-fit: cover;
 }
 

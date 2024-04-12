@@ -1,4 +1,5 @@
 .advantage,
+.advantage,
 .advantage * {
   box-sizing: border-box;
 }
@@ -205,46 +206,37 @@
   align-items: center;
   justify-content: flex-start;
 }
-.img5 {
-  width: 1305px;
-  height: 460px;
+.advan_img1 {
+  width: 100%;
+  height: 506px;
   position: absolute;
-  left: 67px;
-  top: 115px;
+  left: -5px;
+  top: 116px;
   object-fit: cover;
 }
-.img6 {
-  width: 657px;
-  height: 726px;
+.advan_img2 {
+  width: 449px;
+  height: 531px;
   position: absolute;
-  left: 846px;
-  top: 321px;
+  left: 950px;
+  top: 469px;
   object-fit: cover;
 }
-.img7 {
-  width: 547px;
-  height: 474px;
+.advan_img3 {
+  width: 315px;
+  height: 175px;
   position: absolute;
-  left: 664px;
-  top: 699px;
+  left: 1094px;
+  top: 939px;
   object-fit: cover;
 }
-.img8 {
-  width: 432px;
-  height: 402px;
+.advan_img4 {
+  width: 328px;
+  height: 446px;
   position: absolute;
-  left: 11px;
-  top: 259px;
+  left: 698px;
+  top: 654px;
   object-fit: cover;
 }
-.img9 {
-  width: 350px;
-  height: 704px;
-  position: absolute;
-  left: 1054px;
-  top: 525px;
-  object-fit: cover;
-}
-
 a:link {color:#000000;}
 a:visited{color:#000000;}
