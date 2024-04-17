@@ -4,9 +4,7 @@
 }
 .main {
   background: #ffffff;
-  height: 1145px;
   position: relative;
-  overflow: hidden;
   text-align: center;
 }
 .index_img1 {
@@ -14,6 +12,7 @@
 }
 .img1 {
   padding-top: 500px;
+  padding-bottom: 100px;
 }
 .header {
   display: flex;
