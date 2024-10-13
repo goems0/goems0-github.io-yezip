@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" th:href="@{/css/navigation.css}">
+<link rel="stylesheet" th:href="@{/css/itemList.css}">
+<link rel="stylesheet" th:href="@{/css/profile.css}">
+<meta charset="UTF-8">
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<title>프로필</title>
+</head>
+<body>
+	<div class="profile">
+		<!-- 네비게이션바 -->
+		<div th:insert="~{/navigation :: nav}"></div>
+
+		<div class="title">
+		  <div class="left">
+		      <img th:src="@{/image/main/person.png}">
+			  <p class="text">작가 프로필
+		  </div>
+			<div class="right"><button type="button">작품 등록</button></div>
+		</div>
+		<div class="line"></div>
+		
+		<main>
+		      <div class="part1">
+		          <div class="profile-img"></div>
+		          <hr>
+		          <div class="info1">
+		              <div class="text1">작가명</div>
+		              <div class="text3">유진</div>
+		          </div>
+		          <div class="info1">
+		              <div class="text1"><img th:src="@{/image/author/Instagram.png}"></div>
+		              <div class="text3">@ahnewjin</div>
+		          </div>
+		          <div class="info1">
+		              <div class="text1">한줄소개</div>
+		              <div class="text3">세계의 곳곳을 돌아다니며 풍경을 한국화로 표현하고 있는 작가</div>
+		          </div>
+		          <div class="info2">
+		              <div class="text2">경력</div>
+		              <div class="text3">00년도 00대회 회화부분 우수상
+		              <br>00년도 00대회 회화부분 우수상
+		              <br>00년도 00대회 회화부분 우수상</div>
+		          </div>
+		          <div class="update-btn"><button type="button">프로필 수정</button></div>
+		      </div>
+		      
+		      <div class="part2">
+		          <!-- 작가 작품 -->
+		          <div th:insert="~{/itemList :: profile-itemList}"></div>
+		      </div>
+		</main>
+		
+	</div>
+
+	<script>
+		var msnry = new Masonry('.profile-itemList', {
+			itemSelector : 'figure',
+			columnWidth : 'figure',
+			percentPosition : true,
+			gutter : 20,
+		});
+
+		imagesLoaded('.profile-itemList').on('progress', function() {
+			msnry.layout();
+		});
+	</script>
+</body>
+</html>

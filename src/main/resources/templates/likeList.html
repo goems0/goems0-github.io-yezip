@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" th:href="@{/css/signup.css}">
+<link rel="stylesheet" th:href="@{/css/navigation.css}">
+<link rel="stylesheet" th:href="@{/css/login.css}">
+<link rel="stylesheet" th:href="@{/css/itemList.css}">
+<meta charset="UTF-8">
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<title>좋아요</title>
+</head>
+<body>
+    <div class="itemListDiv">
+       <!-- 네비게이션바 -->
+       <div th:insert="~{/navigation :: nav}"></div>
+       
+        <div class="title"><p class="txt">좋아요</p></div>
+        <div class="line"></div>
+        
+        <!-- 좋아요 목록 -->
+        <div th:insert="~{/itemList :: like-itemList}"></div>
+     </div>
+     
+    <script>
+     var msnry = new Masonry( '.like-itemList', 
+    	{  itemSelector: 'figure',  
+    	   columnWidth: 'figure',  
+           percentPosition: true,  
+           gutter : 20,}
+     );
+     
+     imagesLoaded( '.like-itemList' ).on( 'progress', function() {  
+    	    msnry.layout();
+    	    });
+
+    </script>
+</body>
+</html>

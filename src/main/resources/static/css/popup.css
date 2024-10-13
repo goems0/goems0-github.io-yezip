@@ -1,0 +1,111 @@
+.signup-popup, .findId-popup, .findPw-popup, .resetPw-popup,
+.author-popup  {
+	text-align: center;
+}
+.signup-popup .rectangle-white, .findId-popup .rectangle-white,
+.findPw-popup .rectangle-white, .resetPw-popup .rectangle-white,
+.author-popup .rectangle-white {
+  background: #ffffff;
+  border-radius: 30px;
+  width: 731px;
+  height: 358px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.signup-popup .text1, .findId-popup .text1,
+.findPw-popup .text1, .resetPw-popup .text1 {
+  color: #000000;
+  font-size: 32px;
+  padding: 20px;
+}
+.author-popup .text1 {
+	color: #000000;
+  font-size: 32px;
+  padding-top: 50px;
+}
+.signup-popup .text2, .findId-popup .text2,
+.findPw-popup .text2, .resetPw-popup .text2 {
+  color: #000000;
+  font-size: 48px;
+}
+.author-popup .text2 {
+	font-size: 48px;
+	padding: 30px 0px 40px;
+}
+.signup-popup button {
+	background: #000000;
+	border-radius: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 237px;
+	height: 56px;
+	box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.6);
+	color: white;
+	font-size: 20px;
+	margin: 10px auto;
+	cursor: pointer; /* 포인터 모양으로 변경 */
+}
+.findPw-popup button, .resetPw-popup button,
+.author-popup button {
+  background: #000000;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 237px;
+  height: 56px;
+  box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.6);
+  color: white;
+  font-size: 20px;
+  margin: 10px auto;
+  display: inline-block; /* 클릭 가능하도록 설정 */
+    cursor: pointer; /* 포인터 모양으로 변경 */
+}
+.signup-popup .div2 {
+  color: #ffffff;
+  text-align: left;
+  font-family: "ABeeZee-Italic", sans-serif;
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 10px 0px;
+}
+.signup-popup .text3, .findPw-popup .text3 {
+  margin: 20px 0px 10px 0px;
+}
+.findId-popup button {
+	background: #000000;
+  border-radius: 30px;
+  align-items: center;
+  justify-content: center;
+  width: 237px;
+  height: 56px;
+  box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.6);
+  color: white;
+  font-size: 20px;
+  margin: 15px auto;
+  display: inline-block; /* 클릭 가능하도록 설정 */
+    cursor: pointer; /* 포인터 모양으로 변경 */
+}
+.findId-popup .button-container, .findPw-popup .button-container,
+.resetPw-popup .button-container {
+	display: flex;
+	 flex-direction: column; /* 버튼을 세로로 배치 */
+    align-items: center; /* 버튼을 중앙 정렬 */
+    margin-top: 20px; /* 버튼 위쪽 여백 */
+}
+.resetPw-popup .text3 {
+	margin: 20px 0px 10px 0px;
+	display: flex; /* 텍스트와 이미지를 가로로 정렬 */
+    justify-content: center;
+}
+.resetPw-popup img.arrow {
+	margin-top: auto;
+	margin-bottom: auto;
+}

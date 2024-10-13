@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" th:href="@{/css/signup.css}">
+<link rel="stylesheet" th:href="@{/css/navigation.css}">
+<link rel="stylesheet" th:href="@{/css/login.css}">
+<link rel="stylesheet" th:href="@{/css/popup.css}">
+<meta charset="UTF-8">
+<title>sign up</title>
+</head>
+<body>
+	<div class="div">
+	   <!-- 네비게이션바 -->
+	   <div th:insert="~{/navigation :: nav}"></div>
+	   
+		<div class="title"><p class="signup">회원가입</p></div>
+		<div class="signup-line"></div>
+		
+		<!-- 회원가입 폼 -->
+		<form class="signupForm" method="post" th:action="@{/signup}">
+		  <div class="div2">
+		      <div class="div3">ID</div>
+		      <input class="txt" type="text" size=70 name="id" placeholder="아이디를 입력하세요">
+		      <button class="id-btn"><p class="id-check">ID 중복확인</p></button>
+		  </div>
+		  <div class="div2">
+              <div class="div3">PASSWORD</div>
+              <input class="txt" type="password" size=70 name="pw" placeholder="패스워드를 입력하세요">
+              <button class="hidden-btn"></button>
+          </div>
+          <div class="div2">
+              <div class="div3">PASSWORD 재입력</div>
+              <input class="txt" type="password" size=70 name="pw2" placeholder="패스워드를 입력하세요">
+              <button class="hidden-btn"></button>
+          </div>
+          <div class="div2">
+              <div class="div3">이름</div>
+              <input class="txt" type="text" size=70 name="name" placeholder="이름을 입력하세요">
+              <button class="hidden-btn"></button>
+          </div>
+          <div class="div2">
+              <div class="div3">전화번호</div>
+              <input class="txt" type="text" size=70 name="phone" placeholder="전화번호를 입력하세요">
+              <button class="hidden-btn"></button>
+          </div>
+          <div class="div2">
+              <div class="div3">이메일</div>
+              <input class="txt" type="text" size=70 name="email" placeholder="이메일을 입력하세요">
+              <button class="hidden-btn"></button>
+          </div>
+            
+        <div class="div4">
+            <input type="checkbox" id="check1" name="yakgwan-check">
+            <label for="check1"></label>
+            <div class="div5">
+                <div class="div6">약관동의</div>
+                <img class="detail" th:src="@{/image/signup/detail.png}" />
+            </div>
+        </div>
+        <div class="div4">
+            <input type="checkbox" id="check2" name="info-check">
+            <label for="check2"></label>
+            <div class="div5">
+                <div class="div6">개인 정보 수집 동의</div>
+                <img class="detail" th:src="@{/image/signup/detail.png}" />
+            </div>
+        </div>
+        
+        <button class="submit-btn" onclick="signupPopOpen(); return false;">
+            <p class="submit">가입하기</p>
+        </button>
+		</form>
+	</div>
+    <!-- 레이어 팝업 추가 -->
+    <div id="loginOverlay" class="overlay" onclick="loginClosePopup();"></div>
+    <div id="login-popup" class="popup" style="display: none;">
+        <div th:replace="login :: login-popup"></div>
+    </div>
+    <!-- 레이어 팝업 추가 -->
+    <div id="signupOverlay" class="overlay" onclick="signupClosePopup();"></div>
+    <div id="signup-popup" class="popup" style="display: none;">
+        <div th:replace="popup :: signup-popup"></div>
+    </div>
+    <!-- JavaScript 파일 포함 -->
+    <script src="/js/popup.js"></script>
+</body>
+</html>

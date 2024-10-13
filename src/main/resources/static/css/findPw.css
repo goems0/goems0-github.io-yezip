@@ -1,0 +1,82 @@
+body {
+    background: #1e1f23;
+    max-width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.findPw .title {
+    color: white;
+    font-size: 40px;
+    letter-spacing: -0.01em;
+    width: 90%; 
+    margin:20px auto;
+}
+.findPw .line {
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 2px 0 0 0;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.findPw .findPwForm {
+    margin-top: 100px;
+    text-align: center;
+}
+.findPw .div2 {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.findPw .div3 {
+    color: #ffffff;
+  text-align: left;
+  font-size: 36px;
+  width: 400px;
+}
+.findPw input.txt {
+    background: #ffffff;
+  border-radius: 30px;
+  box-shadow: none;
+  padding-left: 20px;
+  height: 50px;
+}
+.findPw .findPw-btn {
+  background: #000000;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 237px;
+  height: 56px;
+  box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.6);
+  margin: 100px auto 100px auto;
+  cursor: pointer; /* 포인터 모양으로 변경 */
+}
+.findPw .findPw-btn p {
+    font-size: 24px;
+    color: white;
+}
+.overlay {
+    display: none; /* 초기 상태는 숨김 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    backdrop-filter: blur(5px); /* 배경 흐리게 */
+}
+
+.popup {
+    display: none; /* 초기 상태는 숨김 */
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 중앙으로 이동 */
+    border-radius: 5px;
+    z-index: 1000;
+}

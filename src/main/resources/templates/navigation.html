@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" th:href="@{/js/loginPopup.js}">
+<meta charset="UTF-8">
+<title>navigation</title>
+</head>
+<body>
+    <div th:fragment="nav" class="nav">
+        <div class="navigation">
+           <div class="navi-left">
+               <a th:href="@{/}"><img class="navi-logo" th:src="@{/image/main/logo.png}" /></a>
+               <div class="menu">
+                   <div class="main"><a th:href="@{/}">MAIN</a></div>
+                   <div class="whole"><a th:href="@{/whole-items}">전체보기</a></div>
+               </div>
+           </div>
+            <div class="navi-right">
+                <!-- 로그인 된 상태 -->
+                <!-- <img class="cart" th:src="@{/image/main/cart.png}" /> -->
+                <a th:href="@{/likeList}"><img class="like" th:src="@{/image/main/like.png}" /> </a>
+                <!-- <img class="person" th:src="@{/image/main/person.png}" />
+                <img class="below" th:src="@{/image/main/below.png}" /> -->
+                <!-- 로그인 안 된 상태 --> 
+                <a class="btn_open" onclick="loginPopOpen(); return false;">
+                    <img class="cart" th:src="@{/image/main/cart.png}" />
+                </a>
+                <!-- <a class="btn_open" onclick="loginPopOpen(); return false;">
+                    <img class="like" th:src="@{/image/main/like.png}" />
+                </a> -->
+                <a th:href="@{/myPage}">
+                    <img class="person" th:src="@{/image/main/person.png}" />
+                </a>
+                <a class="btn_open" onclick="loginPopOpen(); return false;">
+                    <img class="below" th:src="@{/image/main/below.png}" />
+                </a>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

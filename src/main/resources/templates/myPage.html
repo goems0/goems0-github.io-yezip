@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" th:href="@{/css/navigation.css}">
+<link rel="stylesheet" th:href="@{/css/myPage.css}">
+<meta charset="UTF-8">
+<title>마이페이지</title>
+</head>
+<body>
+    <div class="myPage">
+        <!-- 네비게이션바 -->
+        <div th:insert="~{/navigation :: nav}"></div>
+        
+        <div class="title"><p class="text">마이페이지</p></div>
+        <div class="line"></div>
+        
+        <main>
+            <div class="part1">
+                <div class="rec">
+                    <img class="profile-img" th:src="@{/image/author/profile.png}">
+                    <div class="name">최유리</div>
+                    <hr>
+                    <div class="items">
+                        <div class="item">
+                            <div class="num">0</div>
+                            <div class="text">저장한<br>작품</div>    
+                        </div>
+                        <div class="item">
+                            <div class="num">-</div>
+                            <div class="text">업로드<br>작품</div> 
+                        </div>
+                    </div>
+                </div>
+                <div class="apply">
+                    <div class="text">작가가 되고 싶다면?</div>
+                    <a th:href="@{/applicationAuthor}"><button type="button">
+                    <img th:src="@{/image/signup/arrow.png}">&nbsp;&nbsp;작가 신청하기</button></a>
+                </div>
+            </div>
+            
+            <div class="part2">
+                <div class="manage">
+                    <div class="title2">활동 관리</div>
+                    <div class="content"><a th:href="@{/userInfo}">회원 정보</a></div><hr>
+                    <div class="content">프로필 설정</div><hr>
+                    <div class="content">주문 내역 조회</div><hr>
+                    <div class="content">배송 현황</div><hr>
+                </div>
+                <div class="kakao">
+                    <div class="title2">예집 지원센터</div>
+                    <div class="content">카카오톡 채널 문의</div><hr>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

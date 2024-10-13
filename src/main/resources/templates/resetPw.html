@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" th:href="@{/css/navigation.css}">
+<link rel="stylesheet" th:href="@{/css/login.css}">
+<link rel="stylesheet" th:href="@{/css/popup.css}">
+<link rel="stylesheet" th:href="@{/css/resetPw.css}">
+<meta charset="UTF-8">
+<title>비밀번호 재설정</title>
+</head>
+<body>
+    <div class="resetPw">
+        <!-- 네비게이션바 -->
+        <div th:insert="~{/navigation :: nav}"></div>
+
+        <div class="title">
+            <p class="">비밀번호 재설정</p>
+        </div>
+        <div class="line"></div>
+
+        <!-- 비밀번호 재설정 폼 -->
+        <form class="resetPwForm" method="post">
+            <div class="div2">
+                <div class="div3">새 비밀번호</div>
+                <input class="txt" type="text" size=70 name="newPw"
+                    placeholder="비밀번호를 입력하세요">
+            </div>
+            <div class="div2">
+                <div class="div3">새 비밀번호 확인</div>
+                <input class="txt" type="text" size=70 name="confirmPw"
+                    placeholder="비밀번호를 입력하세요">
+            </div>
+
+            <button class="resetPw-btn" type="button" onclick="resetPwPopOpen(); return false;">
+                <p>변경하기</p>
+            </button>
+        </form>
+    </div>
+    <!-- 레이어 팝업 추가 -->
+    <div id="loginOverlay" class="overlay" onclick="loginClosePopup();"></div>
+    <div id="login-popup" class="popup" style="display: none;">
+        <div th:replace="login :: login-popup"></div>
+    </div>
+    <!-- 레이어 팝업 추가 -->
+    <div id="resetPwOverlay" class="overlay" onclick="resetPwClosePopup();"></div>
+    <div id="resetPw-popup" class="popup" style="display: none;">
+        <div th:replace="popup :: resetPw-popup"></div>
+    </div>
+    <!-- JavaScript 파일 포함 -->
+    <script src="/js/popup.js"></script>
+</body>
+</html>
