@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" th:href="@{/css/navigation.css}">
+<link rel="stylesheet" th:href="@{/css/popup.css}">
+<link rel="stylesheet" th:href="@{/css/userInfo.css}">
+<meta charset="UTF-8">
+<title>회원정보 수정</title>
+</head>
+<body>
+    <div class="userInfo">
+       <!-- 네비게이션바 -->
+       <div th:insert="~{/navigation :: nav}"></div>
+       
+        <div class="title"><p class="txt">회원정보 수정</p></div>
+        <div class="line"></div>
+        
+        <main>
+            <!-- 회원정보 수정 폼 -->
+            <form method="post" th:action="@{/userInfo}">
+                <div class="part0">
+                    <div class="part1">
+                    <div class="container">
+                        <div class="text"><p class="btn-text">ID</p></div>
+                        <input class="input-text" type="text" name="id" placeholder="아이디를 입력하세요">
+                        <button class="id-btn"><p class="btn-text">ID 중복확인</p></button>
+                    </div>
+                    <div class="container">
+                        <div class="text"><p class="btn-text">PASSWORD</p></div>
+                        <input class="input-text" type="password" name="pw" placeholder="비밀번호를 입력하세요">
+                    </div>
+                    <div class="container">
+                        <div class="text"><p class="btn-text">PASSWORD 재입력</p></div>
+                        <input class="input-text" type="password" name="pw2" placeholder="비밀번호를 입력하세요">
+                    </div>
+                    <div class="container">
+                        <div class="text"><p class="btn-text">이름</p></div>
+                        <input class="input-text" type="text" name="name" placeholder="이름을 입력하세요">
+                    </div>
+                </div>
+                <hr>
+                <div class="part2">
+                    <div class="container">
+                        <div class="text"><p class="btn-text">전화번호</p></div>
+                        <input class="input-text" type="text" name="phone" placeholder="전화번호를 입력하세요">
+                    </div>
+                    <div class="container">
+                        <div class="text"><p class="btn-text">이메일</p></div>
+                        <input class="input-text" type="text" name="email" placeholder="이메일을 입력하세요">
+                        <select name="email2">
+                            <option value="naver">@naver.com</option>
+                            <option value="gmail">@gmail.com</option>
+                            <option value="hanmail">@hanmail.net</option>
+                            <option value="daum">@daum.net</option>
+                            <option value="kakao">@kakao.com</option>
+                            <option value="outlook">@outlook.com</option>
+                            <option value="input">직접입력</option>
+                        </select>
+                    </div>
+                    <div class="container">
+                        <div class="text"><p class="btn-text">배송지</p></div>
+                        <input class="input-text" type="text" name="address" placeholder="배송지를 입력하세요">
+                    </div>
+                </div>
+                </div>
+                
+                <button class="submit-btn">
+                    <p class="text">수정 완료</p>
+                </button>
+                <button class="submit-btn" onclick="dropUserPopOpen(); return false;">
+                    <p class="text">회원 탈퇴</p>
+                </button>
+            </form>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" th:href="@{/css/navigation.css}">
+<link rel="stylesheet" th:href="@{/css/search.css}">
+<link rel="stylesheet" th:href="@{/css/login.css}">
+<link rel="stylesheet" th:href="@{/css/itemList.css}">
+<meta charset="UTF-8">
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<title>검색 결과</title>
+</head>
+<body>
+    <div class="itemListDiv">
+        <!-- 네비게이션바 -->
+       <div th:insert="~{/navigation :: nav}"></div>
+       
+       <!-- 검색창 -->
+       <div th:insert="~{/search :: search}"></div>
+       
+       <div class="title"><p class="text">검색 결과</p></div>
+        <div class="line"></div>
+       
+       <!-- 검색 결과 -->
+        <div th:insert="~{/itemList :: search-itemList}"></div>
+    </div>
+    
+    <script>
+     var msnry = new Masonry( '.search-itemList', 
+        {  itemSelector: 'figure',  
+           columnWidth: 'figure',  
+           percentPosition: true,  
+           gutter : 20,}
+     );
+     
+     imagesLoaded( '.search-itemList' ).on( 'progress', function() {  
+            msnry.layout();
+            });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+body {
+    background: #1e1f23;
+    max-width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.itemListDiv .title {
+    color: white;
+    font-size: 40px;
+    letter-spacing: -0.01em;
+    width: 90%; 
+    margin:20px auto;
+}
+
+.itemListDiv p.txt {
+    text-align: left;
+    margin: 0;
+}
+.itemListDiv .line {
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 2px 0 0 0;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.itemListDiv .like-itemList, .itemListDiv .search-itemList,
+.itemListDiv .whole-itemList, .profile .profile-itemList {
+    display: grid; /* 그리드 레이아웃 사용 */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 자동으로 열 수 조정 */
+    gap: 15px; /* 이미지 간의 간격 설정 */
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap; /* 줄 바꿈 허용 */
+    justify-content: center; /* 가운데 정렬 */
+    text-align: center;
+}
+
+.itemListDiv figure, .profile figure {
+    margin: 15px auto;
+    break-inside: avoid; /* 겹치는 것 방지 */
+    border-radius: 20px; 
+    overflow:hidden;
+}
+
+.itemListDiv figure img, .profile figure img {
+    width: 100%; /* 아이템에 맞춰 이미지 크기 조정 */
+    height: auto; /* 비율 유지 */
+    display: block; /* 이미지 아래 빈 공간 제거 */
+    min-width:100%; 
+    max-width: 100%;
+}

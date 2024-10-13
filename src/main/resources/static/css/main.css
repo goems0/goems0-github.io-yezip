@@ -1,0 +1,228 @@
+html, body {
+	background: #1e1f23;
+	max-width: 100%;
+	height: auto;
+	overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.work {
+	width: auto;
+	height: 550px;
+	margin-top: 200px;
+}
+
+.right {
+	width: 40px;
+	height: 40px;
+	display: block;
+	float: right;
+	margin-top: 250px;
+	margin-right: 150px;
+}
+
+.left {
+	width: 40px;
+	height: 40px;
+	display: block;
+	float: left;
+	margin-top: 250px;
+	margin-left: 150px;
+}
+
+.profile {
+	border-radius: 50%;
+	width: 80px;
+	height: 80px;
+	box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.4);
+	object-fit: cover;
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-right: 0;
+	margin-left: auto;
+}
+.summary {
+	background: #ffffff;
+	border-radius: 5px;
+	width: 323px;
+	height: 60px;
+	box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.4);
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-left: 0;
+	text-align: center;
+	line-height: 60px;
+}
+
+.describe {
+	margin-top: 50px;
+	display: flex;
+	gap: 30px;
+	height: 100px;
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+}
+
+.deco1 {
+	width: 1462px;
+	height: 736px;
+	position: absolute;
+	left: -471px;
+	top: 562px;
+	object-fit: cover;
+	z-index: 0;
+}
+
+.deco2 {
+	width: 993px;
+	height: 470px;
+	position: absolute;
+	left: calc(50% + 70px);
+	top: 162px;
+	object-fit: cover;
+	z-index: 0;
+}
+
+.deco3 {
+	width: 909px;
+	height: 450px;
+	position: absolute;
+	left: calc(50% + 250px);
+	top: 650px;
+	object-fit: cover;
+	z-index: 0;
+}
+
+.deco4 {
+	width: 646px;
+	height: 391px;
+	position: absolute;
+	left: calc(50% + 600px);
+	top: 246px;
+	object-fit: cover;
+	z-index: 0;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.image {
+	border-radius: 9px;
+	width: 300px;
+	height: 300px;
+	position: absolute;
+	left: calc(50% + 300px);
+	top: 480px;
+	box-shadow: 0px 3px 22.5px 0px rgba(0, 0, 0, 0.25);
+	object-fit: cover;
+}
+
+.image2 {
+	border-radius: 9px;
+	width: 300px;
+	height: 300px;
+	position: absolute;
+	left: calc(50% - 620px);
+	top: 480px;
+	box-shadow: 0px 3px 22.5px 0px rgba(0, 0, 0, 0.25);
+	object-fit: cover;
+}
+
+.image3 {
+	border-radius: 12px;
+	width: 400px;
+	height: 400px;
+	position: absolute;
+	left: calc(50% + 100px);
+	top: 430px;
+	box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
+	object-fit: cover;
+}
+
+.image4 {
+	border-radius: 12px;
+	width: 400px;
+	height: 400px;
+	position: absolute;
+	left: calc(50% - 500px);
+	top: 430px;
+	box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
+	object-fit: cover;
+}
+
+.image5 {
+	border-radius: 15px;
+	width: 500px;
+	height: 500px;
+	position: absolute;
+	left: calc(50% - 250px);
+	top: 380px;
+	box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
+	object-fit: cover;
+}
+
+/* 1700px이상부터 적용(확대) */
+@media ( max-width : 1700px) {
+	.image {
+		border-radius: 9px;
+		width: 200px;
+		height: 200px;
+		position: absolute;
+		left: calc(50% + 350px);
+		top: 480px;
+		box-shadow: 0px 3px 22.5px 0px rgba(0, 0, 0, 0.25);
+		object-fit: cover;
+	}
+	.image2 {
+		border-radius: 9px;
+		width: 200px;
+		height: 200px;
+		position: absolute;
+		left: calc(50% - 530px);
+		top: 480px;
+		box-shadow: 0px 3px 22.5px 0px rgba(0, 0, 0, 0.25);
+		object-fit: cover;
+	}
+	.image3 {
+		border-radius: 12px;
+		width: 300px;
+		height: 300px;
+		position: absolute;
+		left: calc(50% + 150px);
+		top: 430px;
+		box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
+		object-fit: cover;
+	}
+	.image4 {
+		border-radius: 12px;
+		width: 300px;
+		height: 300px;
+		position: absolute;
+		left: calc(50% - 400px);
+		top: 430px;
+		box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
+		object-fit: cover;
+	}
+	.image5 {
+		border-radius: 15px;
+		width: 400px;
+		height: 400px;
+		position: absolute;
+		left: calc(50% - 200px);
+		top: 380px;
+		box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
+		object-fit: cover;
+	}
+	.right, .left {
+		margin-top: 200px;
+	}
+	.work {
+		height: 450px;
+	}
+	.summary {
+		width: 250px;
+	}
+	
+}

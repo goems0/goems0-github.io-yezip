@@ -17,4 +17,5 @@ public interface CartRepository extends CrudRepository<Cart, Integer> {
     
     // 장바구니 비우기
     int deleteByUid(int uid);
+
 }

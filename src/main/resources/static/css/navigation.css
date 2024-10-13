@@ -1,0 +1,126 @@
+.navigation {
+    width: 100%;
+    height: 150px;
+}
+
+.nav .navi-left {
+    display: flex;
+    gap: 50px;
+}
+
+.nav .navi-logo {
+    width: 200px;
+    height: 200px;
+}
+
+.nav .menu {
+    display: flex;
+    gap: 50px;
+    position: absolute;
+    left: 10%;
+    top: 90px;
+}
+
+.nav .main {
+    color: #ffffff;
+    font-size: 22px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    font-style: italic;
+}
+
+.nav .whole {
+    color: #8b8b8b;
+    font-size: 22px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+}
+
+.nav .navi-right {
+    display: flex;
+    gap: 30px;
+    position: absolute;
+    right: 5%;
+    top: 80px;
+}
+
+.nav .person {
+    width: 45px;
+    height: 45px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.nav .like {
+    width: 48px;
+    height: 48px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.nav .cart {
+    width: 35px;
+    height: 35px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.nav .below {
+    width: 12px;
+    height: 6px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.nav .btn_open {
+    display: inline-block; /* 클릭 가능하도록 설정 */
+    cursor: pointer; /* 포인터 모양으로 변경 */
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.overlay {
+    display: none; /* 초기 상태는 숨김 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    backdrop-filter: blur(5px); /* 배경 흐리게 */
+}
+
+.popup {
+    display: none; /* 초기 상태는 숨김 */
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 중앙으로 이동 */
+    border-radius: 5px;
+    z-index: 1000;
+}
+/* 1700px이상부터 적용(확대) */
+@media ( max-width : 1700px) {
+    .nav .navi-right {
+        display: flex;
+        gap: 20px;
+        position: absolute;
+        left: 80%;
+        top: 80px;
+    }
+    .nav .person {
+        width: 35px;
+        height: 35px;
+    }
+    .nav .like {
+        width: 38px;
+        height: 38px;
+    }
+    .nav .cart {
+        width: 25px;
+        height: 25px;
+    }
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
