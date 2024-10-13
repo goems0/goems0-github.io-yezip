@@ -11,25 +11,25 @@ import com.dongduk.yezip.domain.User;
 
 public interface YezipFacade {
 	// 장바구니 생성 
-	User createByUidAndOid(int uid, int oid);
+	int createCartByUidAndItemId(int uid, int oid);
 	
 	// 전체 상품 주문
-	User createTotalOrder(int uid);
+	int createTotalOrder(int uid);
 	
 	// 장바구니 상품 삭제
-	User deleteCartByUidAndItemId(int uid, int ItemId);
+	int deleteCartByUidAndItemId(int uid, int ItemId);
 	
 	// 장바구니 비우기
     int deleteByUid(int uid);
     
  // 작품 감상(메인화면 좋아요순) 
-    List<Item> findOrderByLikeDesc();
+    List<Item> findItemsOrderByViewCountDesc();
     
     // 작품 상세보기 
     Item findByItemId(int itemId);
     
     // 작품 검색 
-    List<Item> findByKeyword(String keyword);
+    List<Item> findByName(String keyword);
     
     // 작품 등록 
     int createByUid(int uid);
@@ -44,7 +44,7 @@ public interface YezipFacade {
     List<Item> getItemListByUid(int uid);
     
     // 좋아요 누름 
-    int createByUidAndItemId(int uid, int itemId);
+    int createLikeByUidAndItemId(int uid, int itemId);
     
     // 좋아요 취소 
     int deleteLikeByUidAndItemId(int uid, int itemId);
@@ -63,31 +63,27 @@ public interface YezipFacade {
     
     // 주문 목록 조회
     List<TotalOrder> getOrderListByUid(int uid);
-	
-    // 회원가입
-    int createUser(User user);
-    
-    // 로그인
-    int ConfirmUserIdAndPw(String userId, String pw);
+	//회원가입
+    boolean registerUser(User user);
+ // 로그인
+    User findByUserIdAndPw(String userId, String pw);
     
     // 아이디 찾기
     int findByNameAndPhone(String name, String phone);
     
     // 비밀번호 찾기
-    int findByUserIdAndPhoneAndEmail(String name, String phone, String email);
+    int findByUserIdAndNameAndPhone(String userId, String name, String phone);
     
     // 비밀번호 재설정
-    int updatePw(String newpw, String checkPw);
+    int updatePw(String newpw, int uid);
     // 로그아웃
     
     // 회원정보 수정
-    int updateUser(User user);
-    
-    // 회원탈퇴
-    int deleteUser(User user);
+    int updateUser(String userId, String pw, String name, String phone, String email, int uid);
+
     
     // 프로필 설정
-    int updateProfile(int uid, Profile profile, Author author);
+//    int updateProfile(int uid, Profile profile, Author author);
 	
 	
 }

@@ -27,4 +27,6 @@ public class Cart implements Serializable{
     @OneToOne // User와 1:1 관계
     @JoinColumn(name = "uid") // uid를 외래 키로 사용
     private User user;
+    
+    private int itemId; // itemId 필드 추가
 }
