@@ -1,0 +1,132 @@
+body {
+    background: #1e1f23;
+    max-width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.myPage .title {
+    color: white;
+    font-size: 40px;
+    letter-spacing: -0.01em;
+    width: 90%; 
+    margin:20px auto;
+}
+
+.myPage p.txt {
+    text-align: left;
+    margin: 0;
+}
+.myPage .line {
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 2px 0 0 0;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.myPage main {
+    width: 80%;
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+}
+.myPage main .part1 .rec {
+	background: #ffffff;
+  border-radius: 20px;
+  height: 70%;
+  text-align:center;
+}
+.myPage main .part1 .rec .profile-img {
+	margin: 50px auto 10px;
+}
+.myPage main .part1 .rec .name {
+	font-size: 30px;
+	color: #1e1f23;
+}
+.myPage main .part1 .rec hr {
+	border: #acacac 2px solid;
+	width: 60%;
+    margin: 40px auto 10px;
+}
+.myPage main .part1 .rec .items {
+	margin: 30px;
+	display: flex;
+	justify-content: center;
+    gap: 30px;
+    padding-bottom: 30px;
+}
+.myPage main .part1 .rec .items .item .num {
+	color: #b3261e;
+	font-size: 50px;
+	 font-family: var(--label-large-font, "Roboto-Bold", sans-serif);
+	 font-weight: 700;
+}
+.myPage main .part1 .rec .items .item .text {
+	color: #1e1f23;
+  text-align: center;
+  font-family: var(--label-large-font, "Roboto-Medium", sans-serif);
+  font-size: 16px;
+  letter-spacing: 0.11px;
+  font-weight: 500;
+}
+.myPage main .part1 .apply {
+	margin: 50px;
+    text-align: center;
+}
+.myPage main .part1 .apply .text {
+	color: white;
+	font-size: 17px;
+	margin-bottom: 20px;
+}
+.myPage main .part1 .apply button {
+	background: #000000;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 237px;
+    height: 56px;
+    box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.6);
+    color: white;
+    font-size: 20px;
+    margin: 10px auto;
+    cursor: pointer; /* 포인터 모양으로 변경 */
+}
+.myPage main .part2 {
+	background: rgba(217, 217, 217, 0);
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 0.73px;
+  width: 40%;
+  padding: 3%;
+  margin-top: 25px;
+}
+.myPage main .part2 .manage{
+	margin-bottom: 50px;
+}
+.myPage main .part2 .title2 {
+	color: var(--grays-gray-2, #aeaeb2);
+  font-family: var(--label-large-font, "Roboto-Bold", sans-serif);
+  font-size: 19px;
+  line-height: 26.97px;
+  letter-spacing: 0.13px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+.myPage main .part2 .content {
+	color: #ffffff;
+  font-family: var(--label-large-font, "Roboto-Bold", sans-serif);
+  font-size: 19px;
+  line-height: 26.97px;
+  letter-spacing: 0.13px;
+  font-weight: 700;
+}
+.myPage main .part2 hr {
+	border: gray 2px solid;
+	margin: 13px auto;
+}
+.myPage main .part2 .kakao {
+	margin-bottom: 70px;
+}
