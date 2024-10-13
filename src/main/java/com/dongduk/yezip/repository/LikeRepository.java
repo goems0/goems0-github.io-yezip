@@ -9,13 +9,13 @@ import com.dongduk.yezip.domain.LikeId;
 import com.dongduk.yezip.domain.Item;
 
 public interface LikeRepository extends CrudRepository<Like, LikeId> {
+
+    // 좋아요 누름 
+    int createByUidAndItemId(int uid, int itemId);
     
-//    // 좋아요 누름 
-//    int createByUidAndItemId(int uid, int itemId);
-//    
-//    // 좋아요 취소 
-//    int deleteByUidAndItemId(int uid, int itemId);
-//    
-//    // 좋아요 보관함
-//    List<Item> getItemListByUid(int uid);
+    // 좋아요 취소 
+    int deleteLikeByUidAndItemId(int uid, int itemId);
+    
+    // 좋아요 보관함
+    List<Item> getItemLikeListByUid(int uid);
 }
