@@ -13,8 +13,8 @@ public interface LikeRepository extends CrudRepository<Like, Integer> {
     int createByUidAndItemId(int uid, int itemId);
     
     // 좋아요 취소 
-    int deleteByUidAndItemId(int uid, int itemId);
+    int deleteLikeByUidAndItemId(int uid, int itemId);
     
     // 좋아요 보관함
-    List<Item> getItemListByUid(int uid);
+    List<Item> getItemLikeListByUid(int uid);
 }
