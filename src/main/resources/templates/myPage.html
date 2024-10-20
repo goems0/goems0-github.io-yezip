@@ -3,6 +3,7 @@
 <head>
 <link rel="stylesheet" th:href="@{/css/navigation.css}">
 <link rel="stylesheet" th:href="@{/css/myPage.css}">
+<link rel="stylesheet" th:href="@{/css/login.css}">
 <meta charset="UTF-8">
 <title>마이페이지</title>
 </head>
@@ -22,11 +23,11 @@
                     <hr>
                     <div class="items">
                         <div class="item">
-                            <div class="num">0</div>
+                            <div class="num"><a th:href="@{/likeList}">0</a></div>
                             <div class="text">저장한<br>작품</div>    
                         </div>
                         <div class="item">
-                            <div class="num">-</div>
+                            <div class="num"><a th:href="@{/profile}">-</a></div>
                             <div class="text">업로드<br>작품</div> 
                         </div>
                     </div>
@@ -42,8 +43,8 @@
                 <div class="manage">
                     <div class="title2">활동 관리</div>
                     <div class="content"><a th:href="@{/userInfo}">회원 정보</a></div><hr>
-                    <div class="content">프로필 설정</div><hr>
-                    <div class="content">주문 내역 조회</div><hr>
+                    <div class="content"><a th:href="@{/profile/update}">프로필 설정</a></div><hr>
+                    <div class="content"><a th:href="@{/order/list}">주문 내역 조회</a></div><hr>
                     <div class="content">배송 현황</div><hr>
                 </div>
                 <div class="kakao">

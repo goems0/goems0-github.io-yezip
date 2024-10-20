@@ -24,7 +24,7 @@
             <a th:href="@{/findPw}"><button type="button">비밀번호 찾기/재설정</button></a>
             </div>
         </div>
-    </div>
+	</div>
     
     <div th:fragment="findPw-popup" class="findPw-popup">
         <div class="rectangle-white">
@@ -35,7 +35,7 @@
                 <button type="button" onclick="loginPopOpen();">로그인하기</button>
             </div>
         </div>
-    </div>
+	</div>
     
     <div th:fragment="resetPw-popup" class="resetPw-popup">
         <div class="rectangle-white">
@@ -46,7 +46,7 @@
                 <button type="button" onclick="loginPopOpen();">로그인하기</button>
             </div>
         </div>
-    </div>
+	</div>
     
     <div th:fragment="author-popup" class="author-popup">
         <div class="rectangle-white">
@@ -54,6 +54,139 @@
             <div class="text2">🎉축하드립니다🎉</div>
             <a th:href="@{/}"><button type="button">시작하기</button></a>
         </div>
+	</div>
+	
+	<div th:fragment="totalOrder-popup" class="totalOrder-popup">
+        <div class="rectangle-white">
+            <div class="container">
+                <div class="text1">배송지</div>
+                <div style="display:flex;align-items: center">
+                    <input type="text" id="postcode" placeholder="우편번호">
+                    <button type="button" onclick="searchAddress()">주소 검색</button>
+                </div>
+				<input type="text" id="address" placeholder="주소"><br> <input
+					type="text" id="detailAddress" placeholder="상세주소"> <input
+					type="text" id="extraAddress" placeholder="참고항목">
+
+			</div>
+            <div class="container">
+                <div class="text1">결제방법</div>
+                <select name="order-method">
+                      <option value="deposit">무통장 입금</option>
+                </select>
+            </div>
+            <div class="payment">
+                <div class="navi">결제 정보</div>
+                <div class="info">
+                    <div class="info-div">
+                        <p class="p1">상품 금액
+                        <p>866,000원
+                    </div>
+                    <div class="info-div">
+                        <p class="p1">배송비
+                        <p>착불
+                    </div>
+                    <div class="info-div">
+                        <p class="p1">총 결제 금액
+                        <p>866,000원
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center;"><button class="order" type="button">전체 상품 주문</button></div>
+        </div>
+		<script
+			src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+		<script>
+		function searchAddress() {
+			new daum.Postcode({
+	            oncomplete: function(data) {
+	                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+	                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+	                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+	                var addr = ''; // 주소 변수
+	                var extraAddr = ''; // 참고항목 변수
+
+	                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+	                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+	                    addr = data.roadAddress;
+	                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+	                    addr = data.jibunAddress;
+	                }
+
+	                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+	                if(data.userSelectedType === 'R'){
+	                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+	                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+	                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+	                        extraAddr += data.bname;
+	                    }
+	                    // 건물명이 있고, 공동주택일 경우 추가한다.
+	                    if(data.buildingName !== '' && data.apartment === 'Y'){
+	                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+	                    }
+	                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+	                    if(extraAddr !== ''){
+	                        extraAddr = ' (' + extraAddr + ')';
+	                    }
+	                    // 조합된 참고항목을 해당 필드에 넣는다.
+	                    document.getElementById("extraAddress").value = extraAddr;
+	                
+	                } else {
+	                    document.getElementById("extraAddress").value = '';
+	                }
+
+	                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+	                document.getElementById('postcode').value = data.zonecode;
+	                document.getElementById("address").value = addr;
+	                // 커서를 상세주소 필드로 이동한다.
+	                document.getElementById("detailAddress").focus();
+	            }
+	        }).open();
+		}
+		</script>
+
+	</div>
+
+	<div th:fragment="layer">
+       <!-- 레이어 팝업 추가 -->
+        <div id="loginOverlay" class="overlay" onclick="loginClosePopup();"></div>
+        <div id="login-popup" class="popup" style="display: none;">
+            <div th:replace="login :: login-popup"></div>
+        </div>
+       <!-- 레이어 팝업 추가 -->
+        <div id="signupOverlay" class="overlay" onclick="signupClosePopup();"></div>
+        <div id="signup-popup" class="popup" style="display: none;">
+            <div th:replace="popup :: signup-popup"></div>
+        </div>
+        <!-- 레이어 팝업 추가 -->
+        <div id="findIdOverlay" class="overlay" onclick="findIdClosePopup();"></div>
+        <div id="findId-popup" class="popup" style="display: none;">
+            <div th:replace="popup :: findId-popup"></div>
+        </div>
+        <!-- 레이어 팝업 추가 -->
+        <div id="findPwOverlay" class="overlay" onclick="findPwClosePopup();"></div>
+        <div id="findPw-popup" class="popup" style="display: none;">
+            <div th:replace="popup :: findPw-popup"></div>
+        </div>
+        <!-- 레이어 팝업 추가 -->
+        <div id="resetPwOverlay" class="overlay"
+            onclick="resetPwClosePopup();"></div>
+        <div id="resetPw-popup" class="popup" style="display: none;">
+            <div th:replace="popup :: resetPw-popup"></div>
+        </div>
+        <!-- 레이어 팝업 추가 -->
+        <div id="authorOverlay" class="overlay" onclick="authorClosePopup();"></div>
+        <div id="author-popup" class="popup" style="display: none;">
+            <div th:replace="popup :: author-popup"></div>
+        </div>
+        <!-- 레이어 팝업 추가 -->
+        <div id="totalOrderOverlay" class="overlay" onclick="totalOrderClosePopup();"></div>
+        <div id="totalOrder-popup" class="popup" style="display: none;">
+            <div th:replace="popup :: totalOrder-popup"></div>
+        </div>
+        <!-- JavaScript 파일 포함 -->
+        <script src="/js/popup.js"></script>
     </div>
 </body>
 </html>

@@ -4,6 +4,7 @@
 <link rel="stylesheet" th:href="@{/css/navigation.css}">
 <link rel="stylesheet" th:href="@{/css/popup.css}">
 <link rel="stylesheet" th:href="@{/css/applicationAuthor.css}">
+<link rel="stylesheet" th:href="@{/css/login.css}">
 <meta charset="UTF-8">
 <title>작가 신청</title>
 </head>
@@ -19,7 +20,9 @@
 			<form method="post" th:action="@{/applicationAuthor}">
 				<div class="part1">
 					<div class="profile">
-					   <img class="profile-img" th:src="@{/image/author/profile.png}">
+					   <img class="profile-img">
+                        <input type="file" id="file-input" accept="image/*" style="display: none;" onchange="handleFileChange(event)">
+                       <img class="profile-upload" th:src="@{/image/author/profile.png}" onclick="document.getElementById('file-input').click();">
 					</div>
 					<div class="insta">
 					   <div class="insta-img"><img th:src="@{/image/author/instagram.png}" /></div>
@@ -57,13 +60,23 @@
                 </div>
 			</form>
 		</main>
+		
+		<!-- 레이어 팝업 -->
+        <div th:insert="~{/popup :: layer}"></div>
     </div>
-    <!-- 레이어 팝업 추가 -->
-    <div id="authorOverlay" class="overlay" onclick="authorClosePopup();"></div>
-    <div id="author-popup" class="popup" style="display: none;">
-        <div th:replace="popup :: author-popup"></div>
-    </div>
-    <!-- JavaScript 파일 포함 -->
-    <script src="/js/popup.js"></script>
+    
+    <script>
+    function handleFileChange(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                // main-image를 선택한 이미지로 변경
+                document.querySelector('.profile-img').src = e.target.result;
+            }
+            reader.readAsDataURL(file);
+        }
+    }
+    </script>
 </body>
 </html>
