@@ -41,9 +41,13 @@ body {
   width: 323px;
   height: 60px;
   box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.4);
+  cursor: pointer; /* 포인터 모양으로 변경 */
 }
 .profile main .part1 .update-btn {
 	text-align:center;
+}
+.profile main .part1 .update-btn button {
+	cursor: pointer; /* 포인터 모양으로 변경 */
 }
 .profile .line {
   border-style: solid;

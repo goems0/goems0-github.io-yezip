@@ -71,7 +71,7 @@
     margin-top: auto;
     margin-bottom: auto;
 }
-.nav .btn_open {
+.nav .btn_open, .navi-right a {
     display: inline-block; /* 클릭 가능하도록 설정 */
     cursor: pointer; /* 포인터 모양으로 변경 */
     margin-top: auto;

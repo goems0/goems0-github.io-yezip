@@ -47,7 +47,7 @@ input.txt {
   box-shadow: none;
   padding-left: 20px;
   height: 50px;
-  font-size: 15px;
+  font-size: 20px;
 }
 .id-btn {
 	background: #1e1f23;
@@ -135,4 +135,15 @@ input[id="check2"]:checked+label::after {
 p.submit {
   color: #ffffff;
   font-size: 24px;
+}
+.signupForm select {
+    background: #1e1f23;
+    border: 2px solid #79747e;
+    border-radius: 9.65px;
+    width: 172px;
+    height: 50px;
+    flex: 0 0 auto; /* 크기 유지 */
+    color: white;
+    padding-left: 10px;
+    font-size: 17px;
 }

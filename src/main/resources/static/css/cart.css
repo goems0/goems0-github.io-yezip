@@ -1,0 +1,126 @@
+body {
+    background: #1e1f23;
+    max-width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.cart .title {
+    color: white;
+    font-size: 40px;
+    letter-spacing: -0.01em;
+    width: 90%; 
+    margin:20px auto;
+}
+
+.cart .title p {
+    text-align: left;
+    margin: 0;
+}
+.cart .line {
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 2px 0 0 0;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cart main {
+    text-align: center;
+    margin-bottom: 100px;
+}
+.cart main .itemList .item {
+    background: #3d3f45;
+    border-radius: 20px;
+    width: 70%;
+    box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 1);
+    margin: 50px auto;
+}
+.cart main .navi {
+    display: flex;
+    justify-content: space-between; /* 항목 사이에 공간을 evenly 배치 */
+    align-items: center; /* 세로 정렬을 중앙으로 */
+    margin-left: 30px;
+    padding-top: 10px;
+    color: white;
+    font-size: 17px;
+}
+.cart main .itemList .item .info-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cart main .itemList .item .item-div {
+	display: flex;
+}
+.cart main .itemList .item .navi .date {
+    display: flex;
+    gap: 30px;
+}
+.cart main .navi p {
+    margin: 10px 0; /* 버튼과의 간격 조정 */
+    font-size: 20px;
+    color: white;
+}
+.cart main .item .navi a {
+    padding-right: 20px;
+}
+.cart main .info-div img {
+    margin: 20px 30px;
+    width: 288px;
+    border-radius: 15px;
+}
+.cart main .info-div .info {
+    font-size: 25px;
+    color: white;
+    text-align: left;
+    padding-top: 30px;
+}
+.cart main .item .info-div .trash {
+	text-align: right;
+}
+.cart main .item .info-div .trash img {
+	width: 30px;
+	margin-top: 150px;
+}
+.cart .payment {
+	background: #3d3f45;
+    border-radius: 20px;
+    width: 70%;
+    box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 1);
+    margin: 50px auto;
+}
+.cart .payment .info {
+    padding: 15px 0;
+}
+.cart .payment .info-div {
+    display: flex;
+    margin-left: 30px;
+}
+.cart .info-div p {
+    color: white;
+    font-size: 23px;
+    text-align:left;
+    margin: 5px 0;
+}
+.cart .info .info-div .p1 {
+    width: 150px;
+}
+.cart button {
+	background: #000000;
+  border-radius: 30px;
+  width: 250px;
+  box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.6);
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px;
+  cursor: pointer;
+}
+.cart main .remove {
+	display: block;
+	margin-left: auto;
+	margin-right: 15%;
+}
+.cart .popup {
+	top: 50%;
+}

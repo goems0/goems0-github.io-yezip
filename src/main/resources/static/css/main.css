@@ -7,27 +7,42 @@ html, body {
 }
 
 .work {
+	position: relative; /* 화살표가 위치할 수 있도록 설정 */
 	width: auto;
 	height: 550px;
 	margin-top: 200px;
 }
 
-.right {
+.right, .left {
 	width: 40px;
 	height: 40px;
 	display: block;
-	float: right;
-	margin-top: 250px;
-	margin-right: 150px;
+	position: absolute; /* 절대 위치로 설정 */
+	top: 50%; /* 세로 중앙 정렬 */
+	transform: translateY(-50%); /* 세로 중앙 정렬 조정 */
+	cursor: pointer; /* 커서 스타일 추가 */
+	z-index: 10; /* 다른 요소들 위에 표시 */
+}
+.right {
+	right: 100px; /* 오른쪽 위치 */
+}
+.left {
+	left: 100px; /* 왼쪽 위치 */
+}
+.hidden {
+	display: none;
 }
 
-.left {
-	width: 40px;
-	height: 40px;
-	display: block;
-	float: left;
-	margin-top: 250px;
-	margin-left: 150px;
+.image-container {
+	display: flex;
+	overflow: hidden;
+	width: 100%; /* 필요한 너비로 조정 */
+	height: 100%; /* 컨테이너의 높이를 설정 */
+}
+
+.image {
+	width: 20%; /* 5개의 이미지를 가로로 표시하기 위한 너비 조정 */
+	transition: transform 0.5s ease; /* 부드러운 전환 효과 */
 }
 
 .profile {
@@ -40,6 +55,9 @@ html, body {
 	margin-bottom: auto;
 	margin-right: 0;
 	margin-left: auto;
+	cursor: pointer;
+	position: relative; /* z-index가 적용되도록 설정 */
+    z-index: 10; /* 다른 이미지보다 위에 위치하도록 설정 */
 }
 .summary {
 	background: #ffffff;
@@ -114,7 +132,7 @@ a {
 	height: 300px;
 	position: absolute;
 	left: calc(50% + 300px);
-	top: 480px;
+	top: calc(50% - 150px);
 	box-shadow: 0px 3px 22.5px 0px rgba(0, 0, 0, 0.25);
 	object-fit: cover;
 }
@@ -125,7 +143,7 @@ a {
 	height: 300px;
 	position: absolute;
 	left: calc(50% - 620px);
-	top: 480px;
+	top: calc(50% - 150px);
 	box-shadow: 0px 3px 22.5px 0px rgba(0, 0, 0, 0.25);
 	object-fit: cover;
 }
@@ -136,7 +154,7 @@ a {
 	height: 400px;
 	position: absolute;
 	left: calc(50% + 100px);
-	top: 430px;
+	top: calc(50% - 200px);
 	box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
 	object-fit: cover;
 }
@@ -147,7 +165,7 @@ a {
 	height: 400px;
 	position: absolute;
 	left: calc(50% - 500px);
-	top: 430px;
+	top: calc(50% - 200px);
 	box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
 	object-fit: cover;
 }
@@ -158,7 +176,7 @@ a {
 	height: 500px;
 	position: absolute;
 	left: calc(50% - 250px);
-	top: 380px;
+	top: calc(50% - 250px);
 	box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
 	object-fit: cover;
 }
@@ -171,7 +189,7 @@ a {
 		height: 200px;
 		position: absolute;
 		left: calc(50% + 350px);
-		top: 480px;
+		top: calc(50% - 100px);
 		box-shadow: 0px 3px 22.5px 0px rgba(0, 0, 0, 0.25);
 		object-fit: cover;
 	}
@@ -181,7 +199,7 @@ a {
 		height: 200px;
 		position: absolute;
 		left: calc(50% - 530px);
-		top: 480px;
+		top: calc(50% - 100px);
 		box-shadow: 0px 3px 22.5px 0px rgba(0, 0, 0, 0.25);
 		object-fit: cover;
 	}
@@ -191,7 +209,7 @@ a {
 		height: 300px;
 		position: absolute;
 		left: calc(50% + 150px);
-		top: 430px;
+		top: calc(50% - 150px);
 		box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
 		object-fit: cover;
 	}
@@ -201,7 +219,7 @@ a {
 		height: 300px;
 		position: absolute;
 		left: calc(50% - 400px);
-		top: 430px;
+		top: calc(50% - 150px);
 		box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
 		object-fit: cover;
 	}
@@ -211,12 +229,9 @@ a {
 		height: 400px;
 		position: absolute;
 		left: calc(50% - 200px);
-		top: 380px;
+		top: calc(50% - 200px);
 		box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
 		object-fit: cover;
-	}
-	.right, .left {
-		margin-top: 200px;
 	}
 	.work {
 		height: 450px;
