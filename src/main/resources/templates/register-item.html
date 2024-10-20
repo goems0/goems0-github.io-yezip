@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" th:href="@{/css/navigation.css}">
+<link rel="stylesheet" th:href="@{/css/register-item.css}">
+<link rel="stylesheet" th:href="@{/css/login.css}">
+<meta charset="UTF-8">
+<title>작품 등록</title>
+</head>
+<body>
+    <div class="register-item">
+        <!-- 네비게이션바 -->
+       <div th:insert="~{/navigation :: nav}"></div>
+       
+        <div class="title"><p class="txt">작품 등록</p></div>
+        <div class="line"></div>
+        
+        <main>
+            <form method="post" th:action="@{/item/register}">
+                <div class="flex">
+                    <div class="part1">
+                    <div class="img">
+                        <img th:src="@{/image/item/main-image.png}" class="main-image"> 
+                        <input type="file" id="file-input" accept="image/*" style="display: none;" onchange="handleFileChange(event)">
+                        <img th:src="@{/image/item/upload.png}" class="upload-image" onclick="document.getElementById('file-input').click();">
+                        <p>메인사진 업로드
+                    </div>
+                    <div class="info">
+                        <div class="row">
+                            <div class="text">작품 제목</div>
+                            <input type="text" placeholder="제목을 입력하세요">
+                        </div>
+                        <div class="row">
+                            <div class="text">사이즈</div>
+                            <input type="text" placeholder="사이즈를 입력하세요">
+                        </div>
+                        <div class="row">
+                            <div class="text">재료</div>
+                            <input type="text" placeholder="재료를 입력하세요">
+                        </div>
+                        <div class="row">
+                            <div class="text">제작 기법</div>
+                            <input type="text" placeholder="제작 기법을 입력하세요">
+                        </div>
+                        <div class="row">
+                            <div class="text">제작 일자</div>
+                            <input type="text" placeholder="제작 일자를 입력하세요">
+                        </div>
+                        <div class="row2">
+                            <div class="text">가격</div>
+                            <input type="text" placeholder="가격을 입력하세요">
+                            <div class="text">원</div>
+                        </div>
+                        <div class="row2">
+                            <div class="text">재고수</div>
+                            <input type="text" placeholder="수량을 입력하세요">
+                            <div class="text">개</div>
+                        </div>
+                    </div>
+                </div>
+
+					<div class="part2">
+						<div class="upload">
+							<p>새로운 포트폴리오 업로드 하기
+							<div class="flex">
+								<div class="img">
+									<input type="file" id="image-input" accept="image/*" multiple
+										style="display: none;" onchange="handleImageChange(event)">
+									<img th:src="@{/image/item/image.png}"
+										onclick="document.getElementById('image-input').click();">
+									<p>이미지
+									<div class="imgs"></div>
+								</div>
+								<div class="video">
+									<input type="file" id="video-input" accept="video/*" multiple
+										style="display: none;" onchange="handleVideoChange(event)">
+									<img th:src="@{/image/item/video.png}"
+										onclick="document.getElementById('video-input').click();">
+									<p>비디오
+									<div class="videos"></div>
+								</div>
+							</div>
+
+						</div>
+						<hr>
+						<div class="detail">
+							<textarea class="intro-text" rows=10 cols=70 maxlength=500
+								name="detail" placeholder="작품 설명을 입력하세요(최대 500자)"
+								spellcheck="false"></textarea>
+						</div>
+
+						<div class="category">
+							<div class="text">카테고리</div>
+							<fieldset>
+								<div class="flex">
+									<div class="ca">
+										<input type="checkbox" id="c1" name="c1" onclick="toggleBorder(this)"> <label
+											for="c1">#회화</label>
+									</div>
+									<div class="ca">
+										<input type="checkbox" id="c2" name="c2" onclick="toggleBorder(this)"> <label
+											for="c2">#공예</label>
+									</div>
+									<div class="ca">
+										<input type="checkbox" id="c3" name="c3" onclick="toggleBorder(this)"> <label
+											for="c3">#사진</label>
+									</div>
+									<div class="ca">
+										<input type="checkbox" id="c4" name="c4" onclick="toggleBorder(this)"> <label
+											for="c4">#음악</label>
+									</div>
+									<div class="ca">
+										<input type="checkbox" id="c5" name="c5" onclick="toggleBorder(this)"> <label
+											for="c5">#문학</label>
+									</div>
+								</div>
+
+								<div class="flex">
+									<div class="ca">
+										<input type="checkbox" id="c6" name="c6" onclick="toggleBorder(this)"> <label
+											for="c6">#시각디자인</label>
+									</div>
+									<div class="ca">
+										<input type="checkbox" id="c7" name="c7" onclick="toggleBorder(this)"> <label
+											for="c7">#미디어디자인</label>
+									</div>
+									<div class="ca">
+										<input type="checkbox" id="c8" name="c8" onclick="toggleBorder(this)"> <label
+											for="c8">#건축디자인</label>
+									</div>
+									<div class="ca">
+										<input type="checkbox" id="c9" name="c9" onclick="toggleBorder(this)"> <label
+											for="c9">#패션디자인</label>
+									</div>
+								</div>
+
+							</fieldset>
+						</div>
+					</div>
+				</div>
+
+				<button class="submit-btn" type="submit">
+					<p class="submit">등록하기</p>
+				</button>
+			</form>
+        </main>
+    </div>
+    
+    
+    <script>
+    function handleFileChange(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                // main-image를 선택한 이미지로 변경
+                document.querySelector('.main-image').src = e.target.result;
+            }
+            reader.readAsDataURL(file);
+        }
+    }
+    
+    function handleImageChange(event) {
+        const files = event.target.files;
+        const imgsContainer = document.querySelector('.imgs');
+        imgsContainer.innerHTML = ''; // 기존 내용 삭제
+        for (const file of files) {
+            const fileName = document.createElement('p');
+            fileName.textContent = file.name;
+            imgsContainer.appendChild(fileName);
+        }
+    }
+
+    function handleVideoChange(event) {
+        const files = event.target.files;
+        const videosContainer = document.querySelector('.videos');
+        videosContainer.innerHTML = ''; // 기존 내용 삭제
+        for (const file of files) {
+            const fileName = document.createElement('p');
+            fileName.textContent = file.name;
+            videosContainer.appendChild(fileName);
+        }
+    }
+    
+    function toggleBorder(checkbox) {
+        const caDiv = checkbox.closest('.ca'); // 체크박스의 부모 요소 찾기
+        if (checkbox.checked) {
+            caDiv.classList.add('active'); // 체크박스가 체크되면 .active 클래스 추가
+        } else {
+            caDiv.classList.remove('active'); // 체크박스가 체크 해제되면 .active 클래스 제거
+        }
+    }
+
+</script>
+    
+</body>
+</html>

@@ -64,6 +64,17 @@ function authorClosePopup() {
     document.getElementById('authorOverlay').style.display = 'none';
     document.getElementById('author-popup').style.display = 'none';
 }
+// 전체 주문 팝업
+function totalOrderPopOpen() {
+    closeOtherPopups('totalOrder');
+    document.getElementById('totalOrderOverlay').style.display = 'block';
+    document.getElementById('totalOrder-popup').style.display = 'block';
+}
+
+function totalOrderClosePopup() {
+    document.getElementById('totalOrderOverlay').style.display = 'none';
+    document.getElementById('totalOrder-popup').style.display = 'none';
+}
 
 // 다른 팝업 닫기
 function closeOtherPopups(except) {
@@ -73,7 +84,8 @@ function closeOtherPopups(except) {
         { id: 'findId', overlayId: 'findIdOverlay' },
         { id: 'findPw', overlayId: 'findPwOverlay' },
         { id: 'resetPw', overlayId: 'resetPwOverlay'},
-        { id: 'author', overlayId: 'authorOverlay'}
+        { id: 'author', overlayId: 'authorOverlay'},
+        { id: 'totalOrder', overlayId: 'totalOrderOverlay'}
     ];
 
     popups.forEach(popup => {

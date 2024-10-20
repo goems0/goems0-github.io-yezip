@@ -18,11 +18,13 @@
             <div class="navi-right">
                 <!-- 로그인 된 상태 -->
                 <!-- <img class="cart" th:src="@{/image/main/cart.png}" /> -->
-                <a th:href="@{/likeList}"><img class="like" th:src="@{/image/main/like.png}" /> </a>
+                <a th:href="@{/likeList}">
+                    <img class="like" th:src="@{/image/main/like.png}" /> 
+                </a>
                 <!-- <img class="person" th:src="@{/image/main/person.png}" />
                 <img class="below" th:src="@{/image/main/below.png}" /> -->
                 <!-- 로그인 안 된 상태 --> 
-                <a class="btn_open" onclick="loginPopOpen(); return false;">
+                <a th:href="@{/cart}">
                     <img class="cart" th:src="@{/image/main/cart.png}" />
                 </a>
                 <!-- <a class="btn_open" onclick="loginPopOpen(); return false;">
@@ -36,6 +38,9 @@
                 </a>
             </div>
         </div>
+        
+        <!-- 레이어 팝업 -->
+        <div th:insert="~{/popup :: layer}"></div>
     </div>
     
 </body>

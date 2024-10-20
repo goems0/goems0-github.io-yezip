@@ -6,33 +6,33 @@
 <link rel="stylesheet" th:href="@{/css/applicationAuthor.css}">
 <link rel="stylesheet" th:href="@{/css/login.css}">
 <meta charset="UTF-8">
-<title>작가 신청</title>
+<title>프로필 설정</title>
 </head>
 <body>
     <div class="applicationAuthor">
         <!-- 네비게이션바 -->
        <div th:insert="~{/navigation :: nav}"></div>
        
-        <div class="title"><p class="txt">작가 신청하기</p></div>
+        <div class="title"><p class="txt">프로필 설정</p></div>
         <div class="line"></div>
         
         <main>
-			<form method="post" th:action="@{/applicationAuthor}">
-				<div class="part1">
-					<div class="profile">
-					   <img class="profile-img">
+            <form method="post" th:action="@{/profile/update}">
+                <div class="part1">
+                    <div class="profile">
+                        <img class="profile-img">
                         <input type="file" id="file-input" accept="image/*" style="display: none;" onchange="handleFileChange(event)">
                        <img class="profile-upload" th:src="@{/image/author/profile.png}" onclick="document.getElementById('file-input').click();">
-					</div>
-					<div class="insta">
-					   <div class="insta-img"><img th:src="@{/image/author/instagram.png}" /></div>
-					   <input class="insta-text" type="text" name="insta" placeholder="인스타 아이디를 입력하세요">
-					</div>
-					<div class="intro">
-					   <p>한줄 소개</p>
-					   <textarea class="intro-text" rows=15 cols=15 maxlength=300 name="intro" placeholder="한줄 소개를 입력하세요" spellcheck="false"></textarea>
-					</div>
-				</div>
+                    </div>
+                    <div class="insta">
+                       <div class="insta-img"><img th:src="@{/image/author/instagram.png}" /></div>
+                       <input class="insta-text" type="text" name="insta" placeholder="인스타 아이디를 입력하세요">
+                    </div>
+                    <div class="intro">
+                       <p>한줄 소개</p>
+                       <textarea class="intro-text" rows=15 cols=15 maxlength=300 name="intro" placeholder="한줄 소개를 입력하세요" spellcheck="false"></textarea>
+                    </div>
+                </div>
                 <div class="part2">
                     <div class="div">
                         <div class="div2">성함</div>
@@ -54,15 +54,12 @@
                         <div class="div2">경력</div>
                         <input class="text" type="text" size= 30 name="career" placeholder="경력을 입력하세요">
                     </div>
-                    <button class="submit-btn" onclick="authorPopOpen(); return false;">
-                        <p class="submit">신청하기</p>
+                    <button class="submit-btn" type="submit">
+                        <p class="submit">수정하기</p>
                     </button>
                 </div>
-			</form>
-		</main>
-		
-		<!-- 레이어 팝업 -->
-        <div th:insert="~{/popup :: layer}"></div>
+            </form>
+        </main>
     </div>
     
     <script>
@@ -78,5 +75,6 @@
         }
     }
     </script>
+    
 </body>
 </html>

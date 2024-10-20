@@ -43,18 +43,10 @@
                 <p>비밀번호 재설정</p>
             </button>
         </form>
+        
+        <!-- 레이어 팝업 -->
+        <div th:insert="~{/popup :: layer}"></div>
     </div>
-    <!-- 레이어 팝업 추가 -->
-    <div id="loginOverlay" class="overlay" onclick="loginClosePopup();"></div>
-    <div id="login-popup" class="popup" style="display: none;">
-        <div th:replace="login :: login-popup"></div>
-    </div>
-    <!-- 레이어 팝업 추가 -->
-    <div id="findPwOverlay" class="overlay" onclick="findPwClosePopup();"></div>
-    <div id="findPw-popup" class="popup" style="display: none;">
-        <div th:replace="popup :: findPw-popup"></div>
-    </div>
-    <!-- JavaScript 파일 포함 -->
-    <script src="/js/popup.js"></script>
+    
 </body>
 </html>

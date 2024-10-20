@@ -1,0 +1,213 @@
+body {
+    background: #1e1f23;
+    max-width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.register-item .title {
+    color: white;
+    font-size: 40px;
+    letter-spacing: -0.01em;
+    width: 90%; 
+    margin:20px auto;
+}
+
+.register-item .title p {
+    text-align: left;
+    margin: 0;
+}
+.register-item .line {
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 2px 0 0 0;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.register-item main {
+	text-align: center;
+}
+.register-item .flex {
+	display: flex;
+	justify-content: center;
+	gap: 50px;
+	margin-top: 100px;
+}
+.register-item .img {
+	position: relative; 
+	display: inline-block;
+}
+
+.register-item .img .main-image {
+    display: block; /* 이미지를 블록으로 설정 */
+    width: 297px; /* 원하는 고정 크기 */
+    height: 377px; /* 원하는 고정 크기 */
+    object-fit: cover; /* 이미지 비율을 유지하며 크기를 조절 */
+}
+
+.register-item .img .upload-image {
+    position: absolute; /* 절대 위치 지정 */
+    top: 50%; /* 세로 중앙 정렬 */
+    left: 50%; /* 가로 중앙 정렬 */
+    transform: translate(-50%, -50%); /* 이미지를 정확히 중앙에 위치 */
+    cursor: pointer;
+}
+
+.register-item .part1 .img p {
+    position: absolute; /* 절대 위치 지정 */
+    top: 60%; /* 텍스트 위치 조정 (원하는 위치로 조정 가능) */
+    left: 50%; /* 가로 중앙 정렬 */
+    transform: translate(-50%, -50%); /* 텍스트를 중앙에 위치 */
+    font-size: 15px; /* 폰트 크기 */
+    font-weight: 600;
+    text-align: center; /* 텍스트 중앙 정렬 */
+}
+.register-item .info {
+	margin-top: 60px;
+	margin-left: 30px;
+}
+.register-item .info .row {
+	display: flex;
+	margin: 30px auto;
+}
+.register-item .info .row .text {
+	font-size: 17px;
+	color: white;
+	font-weight: 500;
+	width: 120px;
+	text-align: left;
+}
+.register-item .info .row2 .text {
+	font-size: 17px;
+    color: white;
+    font-weight: 500;
+    text-align: left;
+}
+.register-item .info .row input,.register-item .info .row2 input {
+	outline: none;
+	border: none;
+	color: white;
+	font-size: 18px;
+	box-shadow: none;
+	background: #1e1f23;
+}
+.register-item .info .row2 input {
+	background: none;
+	width : 150px;
+	text-align:center;
+}
+.register-item .info .row2 {
+	background: #000000;
+  border-radius: 22.91px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  height: 43px;
+  box-shadow: 0px 0px 15.27px 0px rgba(255, 255, 255, 0.6);
+  margin-top: 40px;
+}
+.register-item .part2 .upload {
+	border : 2px #79747e solid;
+	padding: 20px;
+}
+.register-item .part2 .upload p {
+	font-size: 17px;
+	color: white;
+	font-weight: 700;
+}
+.register-item .part2 .upload .flex {
+	margin: 0;
+}
+
+.register-item .part2 .upload  img {
+	cursor: pointer;
+}
+.register-item form hr {
+	border-radius: 100px;
+	height: 5px;
+	width: 30%;
+	background-color: white;
+	margin: 30px auto;
+}
+.register-item textarea {
+	background: #3d3f45;
+	border-radius: 8.12px;
+	height: 128.29px;
+	position: relative;
+	box-shadow: 0px 0px 4.06px 0px rgba(255, 255, 255, 1);
+	padding: 10px;
+	color: white;
+	font-size: 18px;
+	font-weight: 500;
+}
+.register-item form .part2 .category {
+	margin: 50px auto 30px;
+}
+.register-item form .part2 .category .text {
+	color: white;
+	font-size: 17px;
+	background: #1e1f23;
+	border-radius: 18px;
+	width: 143px;
+	height: 33.79px;
+	box-shadow: 0px 0px 12.07px 0px rgba(255, 255, 255, 0.6);
+	display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+.register-item form .part2 .category fieldset {
+	background: rgba(217, 217, 217, 0);
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 0.5px;
+  margin: 30px;
+}
+.register-item form .part2 .category fieldset .flex {
+	display: flex;
+	margin: 0;
+}
+.register-item form .part2 .category .ca {
+	margin: 20px;
+	padding: 0 15px; /* 여백 설정 */
+	height: 30px;
+    cursor: pointer; /* 포인터 모양으로 변경 */
+    border: 2px solid transparent; /* 초기 테두리 없음 */
+    display: flex;
+    align-items: center;
+  justify-content: center;
+}
+.register-item form .part2 .category .ca.active {
+    background: #1e1f23;
+  border-radius: 18px;
+  box-shadow: 0px 0px 12.07px 0px rgba(255, 255, 255, 1);
+}
+
+.register-item form .part2 .category .ca input[type="checkbox"] {
+    display: none; /* 체크박스 숨김 */
+}
+.register-item form .part2 .ca label {
+	font-size: 17px;
+	color: white;
+	cursor: pointer;
+}
+.register-item form .submit-btn {
+    background: #000000;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 237px;
+  height: 56px;
+  box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.6);
+  margin: 100px auto;
+  cursor: pointer; /* 포인터 모양으로 변경 */
+}
+.register-item form p.submit {
+  color: #ffffff;
+  font-size: 24px;
+}

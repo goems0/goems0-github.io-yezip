@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" th:href="@{/css/navigation.css}">
+<link rel="stylesheet" th:href="@{/css/orderDetail.css}">
+<link rel="stylesheet" th:href="@{/css/login.css}">
+<meta charset="UTF-8">
+<title>주문내역 상세조회</title>
+</head>
+<body>
+    <div class="orderDetail">
+        <!-- 네비게이션바 -->
+       <div th:insert="~{/navigation :: nav}"></div>
+       
+        <div class="title"><p class="txt">주문내역 조회</p></div>
+        <div class="line"></div>
+        
+        <main>
+            <div class="order">
+                <div class="navi">주문 정보</div>
+                <div class="info">
+                    <div class="info-div">
+                        <p class="p1">주문 번호
+                        <p>2305486423135
+                    </div>
+                    <div class="info-div">
+                        <p class="p1">주문 날짜
+                        <p>2023-03-11
+                    </div>
+                    <div class="info-div">
+                        <p class="p1">주문자
+                        <p>최선우
+                    </div>
+                    <div class="info-div">
+                        <p class="p1">주문 상태
+                        <p>배송중
+                    </div>
+                </div>
+            </div>
+            <div class="payment">
+                <div class="navi">결제 정보</div>
+                <div class="info">
+                    <div class="info-div">
+                        <p class="p1">상품 금액
+                        <p>334,000원
+                    </div>
+                    <div class="info-div">
+                        <p class="p1">배송비
+                        <p>착불
+                    </div>
+                    <div class="info-div">
+                        <p class="p1">총 결제 금액
+                        <p>334,000원
+                    </div>
+                </div>
+            </div>
+			<div class="itemList">
+				<div class="item">
+					<div class="navi">상품 정보</div>
+					<div class="info-div">
+						<img th:src="@{/image/like/image8.png}">
+						<div class="info">
+							<p>Ocean in the Evening - mymy
+							<p>334,000원 * 1개
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+    </div>
+</body>
+</html>
