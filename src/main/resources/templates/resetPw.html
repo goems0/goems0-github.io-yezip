@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<link rel="stylesheet" th:href="@{/css/navigation.css}">
-<link rel="stylesheet" th:href="@{/css/login.css}">
-<link rel="stylesheet" th:href="@{/css/popup.css}">
-<link rel="stylesheet" th:href="@{/css/resetPw.css}">
+<link rel="stylesheet" th:href="@{css/navigation.css}">
+<link rel="stylesheet" th:href="@{css/login.css}">
+<link rel="stylesheet" th:href="@{css/popup.css}">
+<link rel="stylesheet" th:href="@{css/resetPw.css}">
 <meta charset="UTF-8">
 <title>비밀번호 재설정</title>
 </head>
 <body>
     <div class="resetPw">
         <!-- 네비게이션바 -->
-        <div th:insert="~{/navigation :: nav}"></div>
+        <div th:insert="~{navigation :: nav}"></div>
 
         <div class="title">
             <p class="">비밀번호 재설정</p>
@@ -37,7 +37,7 @@
         </form>
         
         <!-- 레이어 팝업 -->
-        <div th:insert="~{/popup :: layer}"></div>
+        <div th:insert="~{popup :: layer}"></div>
     </div>
     
 </body>

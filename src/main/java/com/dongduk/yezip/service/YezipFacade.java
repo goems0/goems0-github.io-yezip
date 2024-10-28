@@ -2,9 +2,7 @@ package com.dongduk.yezip.service;
 
 import java.util.List;
 
-import com.dongduk.yezip.domain.Author;
 import com.dongduk.yezip.domain.Item;
-import com.dongduk.yezip.domain.Profile;
 import com.dongduk.yezip.domain.TotalOrder;
 import com.dongduk.yezip.domain.User;
 

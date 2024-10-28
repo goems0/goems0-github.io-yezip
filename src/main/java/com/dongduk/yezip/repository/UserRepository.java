@@ -4,8 +4,6 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
-import com.dongduk.yezip.domain.Author;
-import com.dongduk.yezip.domain.Profile;
 import com.dongduk.yezip.domain.User;
 
 import jakarta.transaction.Transactional;

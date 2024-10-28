@@ -1,8 +1,6 @@
 package com.dongduk.yezip.domain;
 
 import java.io.Serializable;
-import java.util.Objects;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.IdClass;

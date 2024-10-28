@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<link rel="stylesheet" th:href="@{/css/navigation.css}">
-<link rel="stylesheet" th:href="@{/css/popup.css}">
-<link rel="stylesheet" th:href="@{/css/applicationAuthor.css}">
-<link rel="stylesheet" th:href="@{/css/login.css}">
+<link rel="stylesheet" th:href="@{css/navigation.css}">
+<link rel="stylesheet" th:href="@{css/popup.css}">
+<link rel="stylesheet" th:href="@{css/applicationAuthor.css}">
+<link rel="stylesheet" th:href="@{css/login.css}">
 <meta charset="UTF-8">
 <title>작가 신청</title>
 </head>
 <body>
     <div class="applicationAuthor">
         <!-- 네비게이션바 -->
-       <div th:insert="~{/navigation :: nav}"></div>
+       <div th:insert="~{navigation :: nav}"></div>
        
         <div class="title"><p class="txt">작가 신청하기</p></div>
         <div class="line"></div>
         
         <main>
-			<form method="post" th:action="@{/applicationAuthor}">
+			<form method="post" th:action="@{applicationAuthor}">
 				<div class="part1">
 					<div class="profile">
 					   <img class="profile-img">
                         <input type="file" id="file-input" accept="image/*" style="display: none;" onchange="handleFileChange(event)">
-                       <img class="profile-upload" th:src="@{/image/author/profile.png}" onclick="document.getElementById('file-input').click();">
+                       <img class="profile-upload" th:src="@{image/author/profile.png}" onclick="document.getElementById('file-input').click();">
 					</div>
 					<div class="insta">
-					   <div class="insta-img"><img th:src="@{/image/author/instagram.png}" /></div>
+					   <div class="insta-img"><img th:src="@{image/author/Instagram.png}" /></div>
 					   <input class="insta-text" type="text" name="insta" placeholder="인스타 아이디를 입력하세요">
 					</div>
 					<div class="intro">
@@ -62,7 +62,7 @@
 		</main>
 		
 		<!-- 레이어 팝업 -->
-        <div th:insert="~{/popup :: layer}"></div>
+        <div th:insert="~{popup :: layer}"></div>
     </div>
     
     <script>

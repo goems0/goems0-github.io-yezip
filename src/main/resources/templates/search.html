@@ -6,10 +6,10 @@
 </head>
 <body>
     <div th:fragment="search">
-        <form class="search-box" method="post" th:action="@{/search}">
-          <input class="search-txt" type="text" size=70 name="keyword" placeholder="작품을 검색하세요.">
+        <form class="search-box" method="post" th:action="@{search}">
+          <input class="search-txt" type="text" name="keyword" placeholder="작품을 검색하세요.">
           <button class="search-btn" type="submit">
-              <img class="search-img" th:src="@{/image/main/search.png}" />
+              <img class="search-img" th:src="@{image/main/search.png}" />
           </button>
         </form>
     </div>

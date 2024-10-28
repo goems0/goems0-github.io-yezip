@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<link rel="stylesheet" th:href="@{/css/navigation.css}">
-<link rel="stylesheet" th:href="@{/css/login.css}">
-<link rel="stylesheet" th:href="@{/css/popup.css}">
-<link rel="stylesheet" th:href="@{/css/findId.css}">
+<link rel="stylesheet" th:href="@{css/navigation.css}">
+<link rel="stylesheet" th:href="@{css/login.css}">
+<link rel="stylesheet" th:href="@{css/popup.css}">
+<link rel="stylesheet" th:href="@{css/findId.css}">
 <meta charset="UTF-8">
 <title>아이디 찾기</title>
 </head>
 <body>
 	<div class="findId">
 		<!-- 네비게이션바 -->
-		<div th:insert="~{/navigation :: nav}"></div>
+		<div th:insert="~{navigation :: nav}"></div>
 
 		<div class="title">
 			<p class="">아이디 찾기</p>
@@ -37,7 +37,7 @@
 		</form>
 		
 		<!-- 레이어 팝업 -->
-        <div th:insert="~{/popup :: layer}"></div>
+        <div th:insert="~{popup :: layer}"></div>
 	</div>
     
 </body>

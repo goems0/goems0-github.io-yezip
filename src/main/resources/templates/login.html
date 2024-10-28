@@ -7,14 +7,14 @@
 <body>
 	<div th:fragment="login-popup" class="login-popup">
 		<div class="rectangle-white">
-		    <img class="rectangle-black" th:src="@{/image/login/rectangle-black.png}" /> 
-		    <img class="logo" th:src="@{/image/login/logo2.png}" />
+		    <img class="rectangle-black" th:src="@{image/login/rectangle-black.png}" /> 
+		    <img class="logo" th:src="@{image/login/logo2.png}" />
 
 			<div class="div">
 				<div class="login">LOGIN</div>
 				<div class="line-1"></div>
 
-				<form class="loginForm" method="post" th:action="@{/login}">
+				<form class="loginForm" method="post" th:action="@{login}">
 					<div class="div-id">
 						<div class="id">ID</div>
 						<input class="id-txt" type="text" size=100
@@ -29,11 +29,11 @@
 				</form>
 
 				<div class="div-mini">
-					<div class="mini"><a th:href="@{/signup}">회원가입</a></div>
+					<div class="mini"><a th:href="@{signup}">회원가입</a></div>
 					<div class="mini-line"></div>
-					<div class="mini"><a th:href="@{/findId}">아이디 찾기</a></div>
+					<div class="mini"><a th:href="@{findId}">아이디 찾기</a></div>
 					<div class="mini-line"></div>
-					<div class="mini"><a th:href="@{/findPw}">비밀번호 찾기/재설정</a></div>
+					<div class="mini"><a th:href="@{findPw}">비밀번호 찾기/재설정</a></div>
 				</div>
 			</div>
 		</div>
