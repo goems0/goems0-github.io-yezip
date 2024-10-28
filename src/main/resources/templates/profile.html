@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<link rel="stylesheet" th:href="@{/css/navigation.css}">
-<link rel="stylesheet" th:href="@{/css/itemList.css}">
-<link rel="stylesheet" th:href="@{/css/profile.css}">
-<link rel="stylesheet" th:href="@{/css/login.css}">
+<link rel="stylesheet" th:href="@{css/navigation.css}">
+<link rel="stylesheet" th:href="@{css/itemList.css}">
+<link rel="stylesheet" th:href="@{css/profile.css}">
+<link rel="stylesheet" th:href="@{css/login.css}">
 <meta charset="UTF-8">
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
@@ -13,14 +13,14 @@
 <body>
 	<div class="profile">
 		<!-- 네비게이션바 -->
-		<div th:insert="~{/navigation :: nav}"></div>
+		<div th:insert="~{navigation :: nav}"></div>
 
 		<div class="title">
 		  <div class="left">
-		      <img th:src="@{/image/main/person.png}">
+		      <img th:src="@{image/main/person.png}">
 			  <p class="text">작가 프로필
 		  </div>
-			<div class="right"><a th:href="@{/item/register}"><button type="button">작품 등록</button></a></div>
+			<div class="right"><a th:href="@{item-register}"><button type="button">작품 등록</button></a></div>
 		</div>
 		<div class="line"></div>
 		
@@ -33,7 +33,7 @@
 		              <div class="text3">유진</div>
 		          </div>
 		          <div class="info1">
-		              <div class="text1"><img th:src="@{/image/author/Instagram.png}"></div>
+		              <div class="text1"><img th:src="@{image/author/Instagram.png}"></div>
 		              <div class="text3"><a th:href="${'https://www.instagram.com/ahnewjin'}">@ahnewjin</a></div>
 		          </div>
 		          <div class="info1">
@@ -46,12 +46,12 @@
 		              <br>00년도 00대회 회화부분 우수상
 		              <br>00년도 00대회 회화부분 우수상</div>
 		          </div>
-		          <div class="update-btn"><a th:href="@{/profile/update}"><button type="button">프로필 수정</button></a></div>
+		          <div class="update-btn"><a th:href="@{profile-update}"><button type="button">프로필 수정</button></a></div>
 		      </div>
 		      
 		      <div class="part2">
 		          <!-- 작가 작품 -->
-		          <div th:insert="~{/itemList :: profile-itemList}"></div>
+		          <div th:insert="~{itemList :: profile-itemList}"></div>
 		      </div>
 		</main>
 		

@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<link rel="stylesheet" th:href="@{/css/navigation.css}">
-<link rel="stylesheet" th:href="@{/css/register-item.css}">
-<link rel="stylesheet" th:href="@{/css/login.css}">
+<link rel="stylesheet" th:href="@{css/navigation.css}">
+<link rel="stylesheet" th:href="@{css/register-item.css}">
+<link rel="stylesheet" th:href="@{css/login.css}">
 <meta charset="UTF-8">
 <title>작품 등록</title>
 </head>
 <body>
     <div class="register-item">
         <!-- 네비게이션바 -->
-       <div th:insert="~{/navigation :: nav}"></div>
+       <div th:insert="~{navigation :: nav}"></div>
        
         <div class="title"><p class="txt">작품 등록</p></div>
         <div class="line"></div>
         
         <main>
-            <form method="post" th:action="@{/item/register}">
+            <form method="post" th:action="@{item-register}">
                 <div class="flex">
                     <div class="part1">
                     <div class="img">
-                        <img th:src="@{/image/item/main-image.png}" class="main-image"> 
+                        <img th:src="@{image/item/main-image.png}" class="main-image"> 
                         <input type="file" id="file-input" accept="image/*" style="display: none;" onchange="handleFileChange(event)">
-                        <img th:src="@{/image/item/upload.png}" class="upload-image" onclick="document.getElementById('file-input').click();">
+                        <img th:src="@{image/item/upload.png}" class="upload-image" onclick="document.getElementById('file-input').click();">
                         <p>메인사진 업로드
                     </div>
                     <div class="info">
@@ -66,7 +66,7 @@
 								<div class="img">
 									<input type="file" id="image-input" accept="image/*" multiple
 										style="display: none;" onchange="handleImageChange(event)">
-									<img th:src="@{/image/item/image.png}"
+									<img th:src="@{image/item/image.png}"
 										onclick="document.getElementById('image-input').click();">
 									<p>이미지
 									<div class="imgs"></div>
@@ -74,7 +74,7 @@
 								<div class="video">
 									<input type="file" id="video-input" accept="video/*" multiple
 										style="display: none;" onchange="handleVideoChange(event)">
-									<img th:src="@{/image/item/video.png}"
+									<img th:src="@{image/item/video.png}"
 										onclick="document.getElementById('video-input').click();">
 									<p>비디오
 									<div class="videos"></div>

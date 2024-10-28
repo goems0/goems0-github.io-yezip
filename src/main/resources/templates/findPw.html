@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<link rel="stylesheet" th:href="@{/css/navigation.css}">
-<link rel="stylesheet" th:href="@{/css/login.css}">
-<link rel="stylesheet" th:href="@{/css/popup.css}">
-<link rel="stylesheet" th:href="@{/css/findPw.css}">
+<link rel="stylesheet" th:href="@{css/navigation.css}">
+<link rel="stylesheet" th:href="@{css/login.css}">
+<link rel="stylesheet" th:href="@{css/popup.css}">
+<link rel="stylesheet" th:href="@{css/findPw.css}">
 <meta charset="UTF-8">
 <title>비밀번호 찾기/재설정</title>
 </head>
 <body>
     <div class="findPw">
         <!-- 네비게이션바 -->
-        <div th:insert="~{/navigation :: nav}"></div>
+        <div th:insert="~{navigation :: nav}"></div>
 
         <div class="title">
             <p class="">비밀번호 찾기/재설정</p>
@@ -19,7 +19,7 @@
         <div class="line"></div>
 
         <!-- 비밀번호 찾기/재설정 폼 -->
-        <form class="findPwForm" method="post" th:action="@{/resetPw}">
+        <form class="findPwForm" method="post" th:action="@{resetPw}">
             <div class="div2">
                 <div class="div3">ID</div>
                 <input class="txt" type="text" size=70 name="id"
@@ -45,7 +45,7 @@
         </form>
         
         <!-- 레이어 팝업 -->
-        <div th:insert="~{/popup :: layer}"></div>
+        <div th:insert="~{popup :: layer}"></div>
     </div>
     
 </body>

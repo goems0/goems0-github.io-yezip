@@ -9,7 +9,7 @@ public class ProfileController {
 	public String showProfile() {
 		return "profile";
 	}
-	@GetMapping("/profile/update")
+	@GetMapping("/profile-update")
 	public String showUpdateProfile() {
 		return "update-profile";
 	}

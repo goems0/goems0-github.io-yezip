@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<link rel="stylesheet" th:href="@{/css/main.css}">
-<link rel="stylesheet" th:href="@{/css/navigation.css}">
-<link rel="stylesheet" th:href="@{/css/cart.css}">
-<link rel="stylesheet" th:href="@{/css/login.css}">
-<link rel="stylesheet" th:href="@{/css/popup.css}">
+<link rel="stylesheet" th:href="@{css/main.css}">
+<link rel="stylesheet" th:href="@{css/navigation.css}">
+<link rel="stylesheet" th:href="@{css/cart.css}">
+<link rel="stylesheet" th:href="@{css/login.css}">
+<link rel="stylesheet" th:href="@{css/popup.css}">
 <meta charset="UTF-8">
 <title>장바구니</title>
 </head>
 <body>
     <div class="cart">
         <!-- 네비게이션바 -->
-        <div th:insert="~{/navigation :: nav}"></div>
+        <div th:insert="~{navigation :: nav}"></div>
        
         <div class="title"><p class="txt">장바구니</p></div>
         <div class="line"></div>
@@ -25,17 +25,17 @@
                             <p>2024.09.10.</p>
                             <p>(2305486423135)</p>
                         </div>
-                        <a th:href="@{/order/detail}"><p>상세보기&nbsp;&nbsp;></a>
+                        <a th:href="@{order-detail}"><p>상세보기&nbsp;&nbsp;></a>
                     </div>
                     <div class="info-div">
                         <div class="item-div">
-                            <img th:src="@{/image/like/image8.png}">
+                            <img th:src="@{image/like/image8.png}">
 							<div class="info">
 								<p>Ocean in the Evening - mymy
 								<p>334,000원 * 1개
 							</div>
 						</div>
-                        <div class="trash"><img th:src="@{/image/cart/trash.png}"></div>
+                        <div class="trash"><img th:src="@{image/cart/trash.png}"></div>
                     </div>
                 </div>
                 <div class="item">
@@ -44,17 +44,17 @@
                             <p>2024.09.10.</p>
                             <p>(2305486423135)</p>
                         </div>
-                        <a th:href="@{/order/detail}"><p>상세보기&nbsp;&nbsp;></button></a>
+                        <a th:href="@{order-detail}"><p>상세보기&nbsp;&nbsp;></button></a>
                     </div>
                     <div class="info-div">
                         <div class="item-div">
-                            <img th:src="@{/image/like/image9.png}">
+                            <img th:src="@{image/like/image9.png}">
                             <div class="info">
                                 <p>노을의 등대 - 이미연
                                 <p>532,000원 * 1개
                             </div>
                         </div>
-                        <div class="trash"><img th:src="@{/image/cart/trash.png}"></div>
+                        <div class="trash"><img th:src="@{image/cart/trash.png}"></div>
                     </div>
                 </div>
             </div>
