@@ -26,32 +26,41 @@ public class User implements Serializable{
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "customer_seq")
     @SequenceGenerator(name = "customer_seq", sequenceName = "CUSTOMER_SEQ", allocationSize = 1)
     private int uid;
-    private String userId;
+    private String userid;
     private String pw;
     private String name;
     private String phone;
     private String email;
-    private String nickname;
     
-    @Embedded
-    private Address address;
-    
-    @OneToOne(cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn(name="uid")
-    private Profile profile;
-    
-    @OneToOne(cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn(name="uid")
-    private Author author;
+//    @Embedded
+//    private Address address;
+//    
+//    @OneToOne(cascade = CascadeType.ALL)
+//    @PrimaryKeyJoinColumn(name="uid")
+//    private Profile profile;
+//    
+//    @OneToOne(cascade = CascadeType.ALL)
+//    @PrimaryKeyJoinColumn(name="uid")
+//    private Author author;
 
-	public User(String userId, String pw, String name, String phone, String email) {
+ // 기본 생성자 (매개변수 없음)
+    public User() {
+    }
+    
+	public User(String userid, String pw, String name, String phone, String email) {
 		super();
-		this.userId = userId;
+		this.userid = userid;
 		this.pw = pw;
 		this.name = name;
 		this.phone = phone;
 		this.email = email;
 	}
+
+public User(String userid, String pw) {
+	super();
+	this.userid = userid;
+	this.pw = pw;
+}
     
     
     

@@ -30,7 +30,7 @@
           </div>
           <div class="div2">
               <div class="div3">PASSWORD 재입력</div>
-              <input class="txt" type="password" size=70 name="pw2" placeholder="패스워드를 입력하세요">
+              <input class="txt" type="password" size=70 name="confirmPw" placeholder="패스워드를 입력하세요">
               <button class="hidden-btn"></button>
           </div>
           <div class="div2">
@@ -72,8 +72,8 @@
                 <img class="detail" th:src="@{image/signup/detail.png}" />
             </div>
         </div>
-        
-        <button class="submit-btn" onclick="signupPopOpen(); return false;">
+        <!-- onclick="signupPopOpen(); return false;" -->
+        <button class="submit-btn">
             <p class="submit">가입하기</p>
         </button>
 		</form>

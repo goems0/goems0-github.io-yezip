@@ -13,6 +13,8 @@
                <div class="menu">
                    <div class="main"><a th:href="@{main}">MAIN</a></div>
                    <div class="whole"><a th:href="@{whole-items}">전체보기</a></div>
+                   <div class="whole"><a th:href="@{main}" th:if="${session.username}"><span th:text="${session.username}"></span></a></div>
+                   <div class="whole"><a th:href="@{main}" th:if="${session.username}">로그아웃</a></div>
                </div>
            </div>
             <div class="navi-right">
