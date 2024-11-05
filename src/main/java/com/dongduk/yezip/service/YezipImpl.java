@@ -1,9 +1,12 @@
 package com.dongduk.yezip.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.dongduk.yezip.domain.*;
 import com.dongduk.yezip.repository.*;
 
 @Service
@@ -28,24 +31,24 @@ public class YezipImpl implements YezipFacade {
  * 장바구니 생성
  */
 
-public User createByUidAndOid(int uid, int oid) {
-    return userRepository.createByUidAndOid(uid, oid);
-}
+    public int createCartByUidAndItemId(int uid, int itemId) {
+        return cartRepository.createByUidAndItemId(uid, itemId);
+    }
 
 /**
  * 전체 상품 주문
  */
 
-public User createTotalOrder(int uid) {
-    return userRepository.createTotalOrder(uid);
+public int createTotalOrder(int uid) {
+    return cartRepository.createTotalOrder(uid);
 }
 
 /**
  * 장바구니 상품 삭제
  */
 
-public User deleteCartByUidAndItemId(int uid, int itemId) {
-    return userRepository.deleteCartByUidAndItemId(uid, itemId);
+public int deleteCartByUidAndItemId(int uid, int itemId) {
+    return cartRepository.deleteCartByUidAndItemId(uid, itemId);
 }
 
 /**
@@ -60,8 +63,8 @@ public int deleteByUid(int uid) {
  * 작품 감상(메인화면 좋아요순)
  */
 
-public List<Item> findOrderByLikeDesc() {
-    return itemRepository.findOrderByLikeDesc();
+public List<Item> findItemsOrderByViewCountDesc() {
+    return itemRepository.findItemsOrderByViewCountDesc();
 }
 
 /**
@@ -76,8 +79,8 @@ public Item findByItemId(int itemId) {
  * 작품 검색
  */
 
-public List<Item> findByKeyword(String keyword) {
-    return itemRepository.findByKeyword(keyword);
+public List<Item> findByName(String keyword) {
+    return itemRepository.findByName(keyword);
 }
 
 /**
@@ -116,7 +119,7 @@ public List<Item> getItemListByUid(int uid) {
  * 좋아요 누름
  */
 
-public int createByUidAndItemId(int uid, int itemId) {
+public int createLikeByUidAndItemId(int uid, int itemId) {
     return likeRepository.createByUidAndItemId(uid, itemId);
 }
 
@@ -158,18 +161,22 @@ public List<TotalOrder> getOrderListByUid(int uid) {
     return orderRepository.getOrderListByUid(uid);
 }
 
-/**
- * 회원가입
- */
-public int createUser(User user) {
-    return userRepository.createUser(user);
+//회원가입
+public boolean registerUser(User user) {
+    try {
+           userRepository.save(user);
+           return true; // 저장 성공
+       } catch (Exception e) {
+           // 예외 발생 시 false 반환
+           return false;
+       }
 }
 
 /**
  * 로그인
  */
-public int ConfirmUserIdAndPw(String userId, String pw) {
-    return userRepository.confirmUserIdAndPw(userId, pw);
+public User findByUserIdAndPw(String userId, String pw) {
+    return userRepository.findByUserIdAndPw(userId, pw);
 }
 
 /**
@@ -182,38 +189,32 @@ public int findByNameAndPhone(String name, String phone) {
 /**
  * 비밀번호 찾기
  */
-public int findByUserIdAndPhoneAndEmail(String name, String phone, String email) {
-    return userRepository.findByUserIdAndPhoneAndEmail(name, phone, email);
+public int findByUserIdAndNameAndPhone(String userId, String name, String phone) {
+    return userRepository.findByUserIdAndNameAndPhone(userId, name, phone);
 }
 
 /**
  * 비밀번호 재설정
  */
-public int updatePw(String newpw, String checkPw) {
-    return userRepository.updatePw(newpw, checkPw);
+public int updatePw(String newpw, int uid) {
+    return userRepository.updatePw(newpw, uid);
 }
 
 /**
  * 회원정보 수정
  */
 
-public int updateUser(User user) {
-    return userRepository.updateUser(user);
+public int updateUser(String userId, String pw, String name, String phone, String email, int uid) {
+    return userRepository.updateUser(userId, pw, name, phone, email, uid);
 }
 
-/**
- * 회원탈퇴
- */
-public int deleteUser(User user) {
-    return userRepository.deleteUser(user);
-}
 
 /**
  * 프로필 설정
  */
 
-public int updateProfile(int uid, Profile profile, Author author) {
-    return userRepository.updateProfile(uid, profile, author);
-}
+//public int updateProfile(int uid, Profile profile, Author author) {
+//    return userRepository.updateProfile(uid, profile, author);
+//}
 
 }
