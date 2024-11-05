@@ -64,9 +64,12 @@ window.onload = updateImages; // 페이지 로드 시 첫 이미지 표시
 		</div>
 
         <!-- 작가, 제목 -->
+        <div style="display: block;">
 		<div class="describe">
+		<!-- <a th:href="@{/profile/{uid}(uid=${user.uid})}"> -->
 		  <a th:href="@{profile}"><img class="profile" th:src="@{image/main/image5.png}" /></a>
 		  <div class="summary">작품 제목 (이름)</div>
+		</div>
 		</div>
 		
 		<!-- 데코레이션 -->
