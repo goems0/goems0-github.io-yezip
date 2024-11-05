@@ -64,20 +64,20 @@ public interface YezipFacade {
 	//회원가입
     boolean registerUser(User user);
  // 로그인
-    User findByUserIdAndPw(String userId, String pw);
+    User findByUseridAndPw(String userid, String pw);
     
     // 아이디 찾기
     int findByNameAndPhone(String name, String phone);
     
     // 비밀번호 찾기
-    int findByUserIdAndNameAndPhone(String userId, String name, String phone);
+    int findByUseridAndNameAndPhone(String userid, String name, String phone);
     
     // 비밀번호 재설정
     int updatePw(String newpw, int uid);
     // 로그아웃
     
     // 회원정보 수정
-    int updateUser(String userId, String pw, String name, String phone, String email, int uid);
+    int updateUser(String userid, String pw, String name, String phone, String email, int uid);
 
     
     // 프로필 설정

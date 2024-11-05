@@ -175,8 +175,8 @@ public boolean registerUser(User user) {
 /**
  * 로그인
  */
-public User findByUserIdAndPw(String userId, String pw) {
-    return userRepository.findByUserIdAndPw(userId, pw);
+public User findByUseridAndPw(String userid, String pw) {
+    return userRepository.findByUseridAndPw(userid, pw);
 }
 
 /**
@@ -189,8 +189,8 @@ public int findByNameAndPhone(String name, String phone) {
 /**
  * 비밀번호 찾기
  */
-public int findByUserIdAndNameAndPhone(String userId, String name, String phone) {
-    return userRepository.findByUserIdAndNameAndPhone(userId, name, phone);
+public int findByUseridAndNameAndPhone(String userid, String name, String phone) {
+    return userRepository.findByUseridAndNameAndPhone(userid, name, phone);
 }
 
 /**
@@ -204,8 +204,8 @@ public int updatePw(String newpw, int uid) {
  * 회원정보 수정
  */
 
-public int updateUser(String userId, String pw, String name, String phone, String email, int uid) {
-    return userRepository.updateUser(userId, pw, name, phone, email, uid);
+public int updateUser(String userid, String pw, String name, String phone, String email, int uid) {
+    return userRepository.updateUser(userid, pw, name, phone, email, uid);
 }
 
 
