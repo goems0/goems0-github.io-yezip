@@ -1,24 +1,27 @@
 .navigation {
     width: 100%;
     height: 150px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
 }
 
 .nav .navi-left {
     display: flex;
     gap: 50px;
+    height: 100%;
 }
 
 .nav .navi-logo {
-    width: 200px;
-    height: 200px;
+    margin: -10px -20px -10px -20px;
+    overflow: hidden;
+    margin-left: 10px;
 }
 
 .nav .menu {
     display: flex;
     gap: 50px;
-    position: absolute;
-    left: 10%;
-    top: 90px;
+    margin: auto 0;
 }
 
 .nav .main {
@@ -39,9 +42,7 @@
 .nav .navi-right {
     display: flex;
     gap: 30px;
-    position: absolute;
-    right: 5%;
-    top: 80px;
+    margin-right: 70px;
 }
 
 .nav .person {
@@ -101,11 +102,7 @@
 /* 1700px이상부터 적용(확대) */
 @media ( max-width : 1700px) {
     .nav .navi-right {
-        display: flex;
         gap: 20px;
-        position: absolute;
-        left: 80%;
-        top: 80px;
     }
     .nav .person {
         width: 35px;

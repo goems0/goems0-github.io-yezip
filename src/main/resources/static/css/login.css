@@ -9,21 +9,22 @@ div.login-popup .rectangle-white {
    display: flex;
   background: #f5f5f5;
   border-radius: 20px;
-  width: 1200px;
-  height: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 200px;
+  width: 100%;
+  margin: auto;
+  margin-top:200px;
   box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 1);
 }
 .login-popup .rectangle-black {
   border-radius: 0px;
-  width: 600px;
-  height: 800px;
+  width: 50%;
 }
 .login-popup .logo {
 	position: absolute;
-    margin-top: 100px;
+	margin-top: 10%;
+    width: 50%;
+}
+.login-popup .div {
+	width: 50%;
 }
 .login-popup .login {
   font-size: 36px;
@@ -38,14 +39,14 @@ div.login-popup .rectangle-white {
 .login-popup .line-1 {
   border-style: solid;
   border-width: 2px 0 0 0;
-  width: 533.02px;
-  margin-left: 30px;
+  width: 90%;
+  margin: auto;
   margin-bottom: 50px;
 }
 .login-popup .div-id, .login-popup .div-pw {
   display: flex;
   flex-direction: column;
-  width: 500px;
+  width: 90%;
   margin: 30px auto 30px auto;
 }
 .login-popup .id, .login-popup .pw {
@@ -86,8 +87,7 @@ div.login-popup .rectangle-white {
 .login-popup .div-mini {
   display: flex;
   gap: 10px;
-  margin-left: 100px;
-    margin-right: 100px;
+  justify-content: center;
 }
 .login-popup .mini {
   color: #8b8b8b;

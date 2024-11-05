@@ -29,19 +29,23 @@
 		          <div class="profile-img"></div>
 		          <hr>
 		          <div class="info1">
-		              <div class="text1">작가명</div>
+		              <div class="text1" >작가명</div>
+		              <!-- <div class="text3" th:text="${user.name}">name</div> -->
 		              <div class="text3">유진</div>
 		          </div>
 		          <div class="info1">
 		              <div class="text1"><img th:src="@{image/author/Instagram.png}"></div>
+		              <!-- <div class="text3" th:text="${author.insta}"><a th:href="${'https://www.instagram.com/${author.insta}'}"></a></div> -->
 		              <div class="text3"><a th:href="${'https://www.instagram.com/ahnewjin'}">@ahnewjin</a></div>
 		          </div>
 		          <div class="info1">
 		              <div class="text1">한줄소개</div>
+		              <!-- <div class="text3" th:text="${author.intro}"></div> -->
 		              <div class="text3">세계의 곳곳을 돌아다니며 풍경을 한국화로 표현하고 있는 작가</div>
 		          </div>
 		          <div class="info2">
 		              <div class="text2">경력</div>
+		              <!-- <div class="text3" th:text="${author.career}"></div> -->
 		              <div class="text3">00년도 00대회 회화부분 우수상
 		              <br>00년도 00대회 회화부분 우수상
 		              <br>00년도 00대회 회화부분 우수상</div>

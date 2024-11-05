@@ -3,14 +3,15 @@ html, body {
 	max-width: 100%;
 	height: auto;
 	overflow-x: hidden;
-    overflow-y: auto;
+	overflow-y: auto;
 }
 
 .work {
-	position: relative; /* 화살표가 위치할 수 있도록 설정 */
-	width: auto;
-	height: 550px;
-	margin-top: 200px;
+	position: relative;
+    width: auto;
+    height: 40%;
+    margin-top: 5%;
+    margin-bottom: 50px;
 }
 
 .right, .left {
@@ -23,26 +24,21 @@ html, body {
 	cursor: pointer; /* 커서 스타일 추가 */
 	z-index: 10; /* 다른 요소들 위에 표시 */
 }
+
 .right {
 	right: 100px; /* 오른쪽 위치 */
 }
+
 .left {
 	left: 100px; /* 왼쪽 위치 */
 }
+
 .hidden {
 	display: none;
 }
 
 .image-container {
-	display: flex;
-	overflow: hidden;
-	width: 100%; /* 필요한 너비로 조정 */
-	height: 100%; /* 컨테이너의 높이를 설정 */
-}
-
-.image {
-	width: 20%; /* 5개의 이미지를 가로로 표시하기 위한 너비 조정 */
-	transition: transform 0.5s ease; /* 부드러운 전환 효과 */
+    padding-top: 30%; /* 비율에 따라 높이 설정 (여기서는 2:1 비율) */
 }
 
 .profile {
@@ -57,8 +53,9 @@ html, body {
 	margin-left: auto;
 	cursor: pointer;
 	position: relative; /* z-index가 적용되도록 설정 */
-    z-index: 10; /* 다른 이미지보다 위에 위치하도록 설정 */
+	z-index: 10; /* 다른 이미지보다 위에 위치하도록 설정 */
 }
+
 .summary {
 	background: #ffffff;
 	border-radius: 5px;
@@ -77,8 +74,8 @@ html, body {
 	display: flex;
 	gap: 30px;
 	height: 100px;
-    justify-content: center; /* 수평 중앙 정렬 */
-    align-items: center; /* 수직 중앙 정렬 */
+	justify-content: center; /* 수평 중앙 정렬 */
+	align-items: center; /* 수직 중앙 정렬 */
 }
 
 .deco1 {
@@ -128,119 +125,47 @@ a {
 
 .image {
 	border-radius: 9px;
-	width: 300px;
-	height: 300px;
+	width: 12%;
 	position: absolute;
-	left: calc(50% + 300px);
-	top: calc(50% - 150px);
-	box-shadow: 0px 3px 22.5px 0px rgba(0, 0, 0, 0.25);
-	object-fit: cover;
+	left: calc(50% - 6% + 27%);
+	top: calc(50% - 20%);
 }
 
 .image2 {
 	border-radius: 9px;
-	width: 300px;
-	height: 300px;
-	position: absolute;
-	left: calc(50% - 620px);
-	top: calc(50% - 150px);
-	box-shadow: 0px 3px 22.5px 0px rgba(0, 0, 0, 0.25);
-	object-fit: cover;
+    width: 12%;
+    position: absolute;
+    left: calc(50% - 6% - 27%);
+    top: calc(50% - 20%);
 }
 
 .image3 {
 	border-radius: 12px;
-	width: 400px;
-	height: 400px;
+	width: 18%;
 	position: absolute;
-	left: calc(50% + 100px);
-	top: calc(50% - 200px);
-	box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
-	object-fit: cover;
+	left: calc(50% - 9% + 15%);
+	top: calc(50% - 30%);
 }
 
 .image4 {
 	border-radius: 12px;
-	width: 400px;
-	height: 400px;
-	position: absolute;
-	left: calc(50% - 500px);
-	top: calc(50% - 200px);
-	box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
-	object-fit: cover;
+	width: 18%;
+    position: absolute;
+    left: calc(50% - 9% - 15%);
+    top: calc(50% - 30%);
 }
 
 .image5 {
 	border-radius: 15px;
-	width: 500px;
-	height: 500px;
-	position: absolute;
-	left: calc(50% - 250px);
-	top: calc(50% - 250px);
-	box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
-	object-fit: cover;
+    width: 25%;
+    position: absolute;
+    left: calc(50% - 12.5%);
+    top: calc(50% - 44%);
 }
 /* 작품 이미지의 z-index를 높게 설정 */
 .image, .image2, .image3, .image4, .image5 {
-    z-index: 1; /* 작품 이미지들이 deco 요소보다 앞으로 오도록 설정 */
-}
-/* 1700px이상부터 적용(확대) */
-@media ( max-width : 1700px) {
-	.image {
-		border-radius: 9px;
-		width: 200px;
-		height: 200px;
-		position: absolute;
-		left: calc(50% + 350px);
-		top: calc(50% - 100px);
-		box-shadow: 0px 3px 22.5px 0px rgba(0, 0, 0, 0.25);
-		object-fit: cover;
-	}
-	.image2 {
-		border-radius: 9px;
-		width: 200px;
-		height: 200px;
-		position: absolute;
-		left: calc(50% - 530px);
-		top: calc(50% - 100px);
-		box-shadow: 0px 3px 22.5px 0px rgba(0, 0, 0, 0.25);
-		object-fit: cover;
-	}
-	.image3 {
-		border-radius: 12px;
-		width: 300px;
-		height: 300px;
-		position: absolute;
-		left: calc(50% + 150px);
-		top: calc(50% - 150px);
-		box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
-		object-fit: cover;
-	}
-	.image4 {
-		border-radius: 12px;
-		width: 300px;
-		height: 300px;
-		position: absolute;
-		left: calc(50% - 400px);
-		top: calc(50% - 150px);
-		box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
-		object-fit: cover;
-	}
-	.image5 {
-		border-radius: 15px;
-		width: 400px;
-		height: 400px;
-		position: absolute;
-		left: calc(50% - 200px);
-		top: calc(50% - 200px);
-		box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
-		object-fit: cover;
-	}
-	.work {
-		height: 450px;
-	}
-	.summary {
-		width: 250px;
-	}
-	
+	z-index: 1; /* 작품 이미지들이 deco 요소보다 앞으로 오도록 설정 */
+	object-fit: cover;
+	box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
+	transition: all 0.3s ease; /* 마우스 호버 시 부드러운 전환 */
 }
