@@ -1,52 +1,80 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<link rel="stylesheet" th:href="@{/css/main.css}">
-<link rel="stylesheet" th:href="@{/css/navigation.css}">
-<link rel="stylesheet" th:href="@{/css/search.css}">
-<link rel="stylesheet" th:href="@{/css/login.css}">
+<link rel="stylesheet" th:href="@{css/main.css}">
+<link rel="stylesheet" th:href="@{css/navigation.css}">
+<link rel="stylesheet" th:href="@{css/search.css}">
+<link rel="stylesheet" th:href="@{css/login.css}">
 <meta charset="UTF-8">
 <title>yezip</title>
+<script>
+let currentIndex = 0;
+const images = [
+    "image/main/item/image0.png", 
+    "image/main/item/image1.png",
+    "image/main/item/image2.png",
+    "image/main/item/image3.png",
+    "image/main/item/image4.png",
+    "image/main/item/image5.png",
+    "image/main/item/image6.png",
+    "image/main/item/image7.png",
+    "image/main/item/image8.png",
+    "image/main/item/image9.png"
+];
+
+function updateImages() {
+	const imageElements = document.querySelectorAll('.image, .image2, .image3, .image4, .image5');
+    imageElements.forEach((img, index) => {
+        img.src = images[(currentIndex + index) % images.length];
+    });
+}
+
+function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateImages();
+}
+
+function previousImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateImages();
+}
+
+window.onload = updateImages; // 페이지 로드 시 첫 이미지 표시
+</script>
 </head>
 <body>
 	<div class="div">
 	   <!-- 네비게이션바 -->
-	   <div th:insert="~{/navigation :: nav}"></div>
-        
-        <!-- 데코레이션 -->
-        <img class="deco1" th:src="@{/image/main/deco1.png}" /> 
-        <img class="deco2" th:src="@{/image/main/deco2.png}" /> 
-        <img class="deco3" th:src="@{/image/main/deco3.png}" />
-        <img class="deco4" th:src="@{/image/main/deco4.png}" />
+	   <div th:insert="~{navigation :: nav}"></div>
         
         <!-- 검색창 -->
-	   <div th:insert="~{/search :: search}"></div>
+	   <div th:insert="~{search :: search}"></div>
 	   
         <!-- 작품 -->
 		<div class="work">
-		    <img class="right" th:src="@{/image/main/right.png}" /> 
-            <img class="left" th:src="@{/image/main/left.png}" />
-			<img class="image" th:src="@{/image/main/image0.png}" /> 
-			<img class="image2" th:src="@{/image/main/image1.png}" /> 
-			<img class="image3" th:src="@{/image/main/image2.png}" /> 
-			<img class="image4" th:src="@{/image/main/image3.png}" /> 
-			<img class="image5" th:src="@{/image/main/image4.png}" />
+		    <img class="right" th:src="@{image/main/right.png}" onclick="nextImage()"/> 
+            <img class="left" th:src="@{image/main/left.png}" onclick="previousImage()"/>
+            <div class="image-container">
+                <img class="image" th:src="@{image/main/item/image0.png}" /> 
+                <img class="image2" th:src="@{image/main/item/image1.png}" /> 
+                <img class="image3" th:src="@{image/main/item/image2.png}" /> 
+                <img class="image4" th:src="@{image/main/item/image3.png}" /> 
+                <img class="image5" th:src="@{image/main/item/image4.png}" /> 
+            </div>
 		</div>
 
         <!-- 작가, 제목 -->
 		<div class="describe">
-		  <a th:href="@{/profile}"><img class="profile" th:src="@{/image/main/image5.png}" /></a>
+		  <a th:href="@{profile}"><img class="profile" th:src="@{image/main/image5.png}" /></a>
 		  <div class="summary">작품 제목 (이름)</div>
 		</div>
 		
+		<!-- 데코레이션 -->
+        <img class="deco1" th:src="@{image/main/deco1.png}" /> 
+        <img class="deco2" th:src="@{image/main/deco2.png}" /> 
+        <img class="deco3" th:src="@{image/main/deco3.png}" />
+        <img class="deco4" th:src="@{image/main/deco4.png}" />
 	</div>
 	
-	<!-- 레이어 팝업 추가 -->
-	<div id="loginOverlay" class="overlay" onclick="loginClosePopup();"></div>
-	<div id="login-popup" class="popup" style="display: none;">
-		<div th:replace="login :: login-popup"></div>
-	</div>
-	<!-- JavaScript 파일 포함 -->
-	<script src="/js/popup.js"></script>
 </body>
 </html>

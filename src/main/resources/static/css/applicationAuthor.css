@@ -36,6 +36,11 @@ body {
 	gap: 100px;
 }
 .applicationAuthor .part1 .profile {
+	position: relative; 
+    display: inline-block;
+}
+.applicationAuthor .part1 .profile .profile-img {
+	display: block; /* 이미지를 블록으로 설정 */
 	background: #ffffff;
   border-radius: 20px;
   border-width: 0.82px;
@@ -43,9 +48,15 @@ body {
   height: 380px;
   margin-left: auto; margin-right: auto;
   text-align: center;
+  object-fit: cover; /* 이미지 비율을 유지하며 크기를 조절 */
 }
-.applicationAuthor .part1 .profile .profile-img {
-    margin-top: 130px;
+.applicationAuthor .part1 .profile .profile-upload {
+    position: absolute; /* 절대 위치 지정 */
+    top: 50%; /* 세로 중앙 정렬 */
+    left: 50%; /* 가로 중앙 정렬 */
+    transform: translate(-50%, -50%); /* 이미지를 정확히 중앙에 위치 */
+    cursor: pointer;
+    z-index: 10; /* 이미지 위에 오도록 설정 */
 }
 .applicationAuthor .part1 .insta {
 	margin: 30px;

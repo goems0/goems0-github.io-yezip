@@ -163,13 +163,13 @@ public List<TotalOrder> getOrderListByUid(int uid) {
 
 //회원가입
 public boolean registerUser(User user) {
-    try {
-           userRepository.save(user);
-           return true; // 저장 성공
-       } catch (Exception e) {
-           // 예외 발생 시 false 반환
-           return false;
-       }
+	 try {
+	        userRepository.save(user);
+	        return true; // 저장 성공
+	    } catch (Exception e) {
+	        // 예외 발생 시 false 반환
+	        return false;
+	    }
 }
 
 /**

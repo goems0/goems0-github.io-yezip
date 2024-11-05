@@ -7,7 +7,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.MapsId;
 import jakarta.persistence.OneToOne;
-import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -27,4 +26,6 @@ public class Cart implements Serializable{
     @OneToOne // User와 1:1 관계
     @JoinColumn(name = "uid") // uid를 외래 키로 사용
     private User user;
+    
+    private int itemId; // itemId 필드 추가
 }

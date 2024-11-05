@@ -30,4 +30,6 @@ public class Item implements Serializable {
     private int cid;
     private String imageList;
     private String videoList;
+    @PrimaryKeyJoinColumn(name="uid")
+    private int uid;
 }

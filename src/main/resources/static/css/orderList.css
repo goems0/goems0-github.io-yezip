@@ -1,0 +1,77 @@
+body {
+    background: #1e1f23;
+    max-width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.orderList .title {
+    color: white;
+    font-size: 40px;
+    letter-spacing: -0.01em;
+    width: 90%; 
+    margin:20px auto;
+}
+
+.orderList .title p {
+    text-align: left;
+    margin: 0;
+}
+.orderList .line {
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 2px 0 0 0;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.orderList main {
+	text-align: center;
+}
+.orderList main .itemList .item {
+	background: #3d3f45;
+	border-radius: 20px;
+	width: 70%;
+	box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 1);
+	margin: 50px auto;
+}
+.orderList main .itemList .item .navi {
+	display: flex;
+    justify-content: space-between; /* 항목 사이에 공간을 evenly 배치 */
+    align-items: center; /* 세로 정렬을 중앙으로 */
+    margin-left: 30px;
+    padding-top: 10px;
+}
+.orderList main .itemList .item .info-div {
+	display: flex;
+}
+.orderList main .itemList .item .navi .date {
+	display: flex;
+	gap: 30px;
+}
+.orderList main .itemList .item .navi p {
+	margin: 10px 0; /* 버튼과의 간격 조정 */
+	font-size: 20px;
+	color: white;
+}
+.orderList main .itemList .item .navi button {
+	text-align: right;
+	outline: none;
+	border: none;
+	color: white;
+	background: none;
+	font-size: 20px;
+	margin-right: 20px;
+	cursor: pointer;
+}
+.orderList main .itemList .item .info-div img {
+	margin: 20px 30px;
+	width: 288px;
+	border-radius: 15px;
+}
+.orderList main .itemList .item .info-div .info {
+	font-size: 25px;
+	color: white;
+	text-align: left;
+	padding-top: 30px;
+}

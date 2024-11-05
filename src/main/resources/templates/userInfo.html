@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<link rel="stylesheet" th:href="@{/css/navigation.css}">
-<link rel="stylesheet" th:href="@{/css/popup.css}">
-<link rel="stylesheet" th:href="@{/css/userInfo.css}">
+<link rel="stylesheet" th:href="@{css/navigation.css}">
+<link rel="stylesheet" th:href="@{css/popup.css}">
+<link rel="stylesheet" th:href="@{css/userInfo.css}">
+<link rel="stylesheet" th:href="@{css/login.css}">
 <meta charset="UTF-8">
 <title>회원정보 수정</title>
 </head>
 <body>
     <div class="userInfo">
        <!-- 네비게이션바 -->
-       <div th:insert="~{/navigation :: nav}"></div>
+       <div th:insert="~{navigation :: nav}"></div>
        
         <div class="title"><p class="txt">회원정보 수정</p></div>
         <div class="line"></div>
         
         <main>
             <!-- 회원정보 수정 폼 -->
-            <form method="post" th:action="@{/userInfo}">
+            <form method="post" th:action="@{userInfo}">
                 <div class="part0">
                     <div class="part1">
                     <div class="container">
