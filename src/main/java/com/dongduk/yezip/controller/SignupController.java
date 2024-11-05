@@ -40,7 +40,7 @@ public class SignupController {
     		if (check1 & check2) {
     			// 사용자 저장
     			if (yezip.registerUser(user)) {
-    				return "redirect:/"; // 회원가입 성공 시 메인
+    				return "redirect:main"; // 회원가입 성공 시 메인
     			} else {
     				model.addAttribute("error", "회원가입에 실패했습니다. 다시 시도해주세요.");
     			}
