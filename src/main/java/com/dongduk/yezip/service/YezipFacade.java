@@ -99,5 +99,10 @@ public interface YezipFacade {
     // 프로필 설정
 //    int updateProfile(int uid, Profile profile, Author author);
 	
-	
+ 	// uid로 주소 찾기
+ 	Address findAddressByUid(int uid);
+ 	
+ 	// 주소 정보 업데이트
+ 	boolean updateAddress(Address address);
+ 	
 }

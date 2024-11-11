@@ -25,6 +25,8 @@ public class YezipImpl implements YezipFacade {
     private CartRepository cartRepository;
     @Autowired
     private AuthorRepository authorRepository;
+    @Autowired
+    private AddressRepository addressRepository;
     
     
 
@@ -255,4 +257,26 @@ public boolean registerAuthor(Author author) {
 //    return userRepository.updateProfile(uid, profile, author);
 //}
 
+	// uid로 주소 찾기
+	public Address findAddressByUid(int uid) {
+        return addressRepository.findByUid(uid);  
+    }
+	
+	// 주소 정보 업데이트
+	@Transactional(rollbackFor = Exception.class)
+    public boolean updateAddress(Address address) {
+		try {
+			addressRepository.save(address);  
+	        return true;
+	    } catch (Exception e) {
+	        // 예외 발생 시 롤백 처리
+	        // 로깅 추가 (필요시)
+	        System.out.println("Error occurred while updating address: "+ e);
+	        
+	        // 예외를 던져서 트랜잭션이 롤백되도록 함
+	        throw new RuntimeException("Failed to update address", e);
+	    }
+    }
+	
+	
 }
