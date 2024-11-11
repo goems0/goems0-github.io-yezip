@@ -58,8 +58,6 @@
                 </div>
             </form>
         </main>
-        
-        <div th:insert="~{popup :: layer}"></div>
     </div>
     
     <script>
@@ -75,38 +73,6 @@
         }
     }
 
-    // 신청버튼
-    document.getElementById('application-form').addEventListener('submit', function(event) {
-        event.preventDefault(); // 기본 폼 제출 방지
-
-        const fileInput = document.getElementById('file-input');
-        if (fileInput.files.length === 0) {
-            alert('파일을 선택해 주세요.');
-            return; // 파일이 선택되지 않으면 종료
-        }
-
-        const formData = new FormData(this); // 폼 데이터 수집
-
-        fetch(this.action, {
-            method: 'POST',
-            body: formData,
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json(); // 응답 본문을 JSON으로 변환
-        })
-        .then(data => {
-            console.log('데이터:', data); // 응답 데이터 확인
-            if (data.message === '신청이 성공적으로 제출되었습니다.') {
-                authorPopOpen();
-            } else {
-                alert('신청 실패: ' + data.message); // 실패 메시지 표시
-            }
-        })
-        .catch(error => console.error('Error:', error));
-    });
     </script>
     
 </body>

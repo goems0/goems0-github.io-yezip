@@ -2,9 +2,12 @@ package com.dongduk.yezip.domain;
 
 import java.io.Serializable;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.MapsId;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -17,15 +20,25 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Author implements Serializable {
-    private int type;
-    private String career;
     private String insta;
-
-    @Id
-    private int uid;
+    private String career;
+    private String intro;
+    private String nickname;
+    private String school;
     
-    @MapsId // Author의 uid가 User의 uid를 참조함
-    @OneToOne // User와 1:1 관계
-    @JoinColumn(name = "uid") // uid를 외래 키로 사용
-    private User user;
+    @Id
+    private int uid; 
+
+    public Author() {}
+	public Author(String insta, String career, String intro, String nickname, String school, int uid) {
+		super();
+		this.insta = insta;
+		this.career = career;
+		this.intro = intro;
+		this.nickname = nickname;
+		this.school = school;
+		this.uid = uid;
+	}
+    
+    
 }

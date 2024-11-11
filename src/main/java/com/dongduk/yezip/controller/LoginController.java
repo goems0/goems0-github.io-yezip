@@ -33,6 +33,7 @@ public class LoginController {
             model.addAttribute("user", user);
             session.setAttribute("username", user.getName());
             session.setAttribute("userid", id);
+            session.setAttribute("uid", user.getUid());
             return "redirect:main"; // 로그인 성공 후 main
         } else {
             // 로그인 실패

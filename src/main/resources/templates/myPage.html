@@ -27,12 +27,13 @@
                             <div class="text">저장한<br>작품</div>    
                         </div>
                         <div class="item">
-                            <div class="num"><a th:href="@{profile}">-</a></div>
+                            <div class="num"><a th:if="${author}" th:href="@{/profile}">-</a></div>
+                            <div class="num"><a th:unless="${author}">-</a></div>
                             <div class="text">업로드<br>작품</div> 
                         </div>
                     </div>
                 </div>
-                <div class="apply">
+                <div class="apply" th:unless="${author}">
                     <div class="text">작가가 되고 싶다면?</div>
                     <a th:href="@{applicationAuthor}"><button type="button">
                     <img th:src="@{image/signup/arrow.png}">&nbsp;&nbsp;작가 신청하기</button></a>

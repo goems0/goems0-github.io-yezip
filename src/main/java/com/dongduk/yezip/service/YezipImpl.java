@@ -23,6 +23,8 @@ public class YezipImpl implements YezipFacade {
     private ItemRepository itemRepository;
     @Autowired
     private CartRepository cartRepository;
+    @Autowired
+    private AuthorRepository authorRepository;
     
     
 
@@ -31,8 +33,8 @@ public class YezipImpl implements YezipFacade {
  * 장바구니 생성
  */
 
-    public int createCartByUidAndItemId(int uid, int itemId) {
-        return cartRepository.createByUidAndItemId(uid, itemId);
+    public int createCartByUidAndItemid(int uid, int itemid) {
+        return cartRepository.createByUidAndItemid(uid, itemid);
     }
 
 /**
@@ -47,8 +49,8 @@ public int createTotalOrder(int uid) {
  * 장바구니 상품 삭제
  */
 
-public int deleteCartByUidAndItemId(int uid, int itemId) {
-    return cartRepository.deleteCartByUidAndItemId(uid, itemId);
+public int deleteCartByUidAndItemid(int uid, int itemid) {
+    return cartRepository.deleteCartByUidAndItemid(uid, itemid);
 }
 
 /**
@@ -71,16 +73,16 @@ public List<Item> findItemsOrderByViewCountDesc() {
  * 작품 상세보기
  */
 
-public Item findByItemId(int itemId) {
-    return itemRepository.findByItemId(itemId);
+public Item findByItemid(int itemid) {
+    return itemRepository.findByItemid(itemid);
 }
 
 /**
  * 작품 검색
  */
 
-public List<Item> findByName(String keyword) {
-    return itemRepository.findByName(keyword);
+public List<Item> findByTitle(String keyword) {
+    return itemRepository.findByTitle(keyword);
 }
 
 /**
@@ -95,16 +97,16 @@ public int createByUid(int uid) {
  * 작품 수정
  */
 
-public int updateByUidAndItemId(int uid, int itemId) {
-    return itemRepository.updateByUidAndItemId(uid, itemId);
+public int updateByUidAndItemid(int uid, int itemid) {
+    return itemRepository.updateByUidAndItemid(uid, itemid);
 }
 
 /**
  * 작품 삭제
  */
 
-public int deleteByItemId(int itemId) {
-    return itemRepository.deleteByItemId(itemId);
+public int deleteByItemid(int itemid) {
+    return itemRepository.deleteByItemid(itemid);
 }
 
 /**
@@ -119,16 +121,16 @@ public List<Item> getItemListByUid(int uid) {
  * 좋아요 누름
  */
 
-public int createLikeByUidAndItemId(int uid, int itemId) {
-    return likeRepository.createByUidAndItemId(uid, itemId);
+public int createLikeByUidAndItemid(int uid, int itemid) {
+    return likeRepository.createByUidAndItemid(uid, itemid);
 }
 
 /**
  * 좋아요 취소
  */
 
-public int deleteLikeByUidAndItemId(int uid, int itemId) {
-    return likeRepository.deleteLikeByUidAndItemId(uid, itemId);
+public int deleteLikeByUidAndItemid(int uid, int itemid) {
+    return likeRepository.deleteLikeByUidAndItemid(uid, itemid);
 }
 
 /**
@@ -143,8 +145,8 @@ public List<Item> getItemLikeListByUid(int uid) {
  * 장바구니 버튼 클릭 (oid 반환), 상세페이지 주문버튼 클릭
  */
 
-public int createOrder(int uid, int itemId, int count) {
-    return orderRepository.createOrder(uid, itemId, count);
+public int createOrder(int uid, int itemid, int count) {
+    return orderRepository.createOrder(uid, itemid, count);
 }
 
 /**
@@ -161,7 +163,18 @@ public List<TotalOrder> getOrderListByUid(int uid) {
     return orderRepository.getOrderListByUid(uid);
 }
 
+	//userid로 uid 찾기
+	public User findByUserid(String userid) {
+		return userRepository.findByUserid(userid);
+	}
+	
+	// uid로 user 찾기
+    public User findByUid(int uid) {
+    	return userRepository.findByUid(uid);
+    }
+	
 //회원가입
+	@Transactional(rollbackFor = Exception.class)
 public boolean registerUser(User user) {
 	 try {
 	        userRepository.save(user);
@@ -170,6 +183,11 @@ public boolean registerUser(User user) {
 	        // 예외 발생 시 false 반환
 	        return false;
 	    }
+}
+
+// id 중복확인
+public boolean isIdDuplicate(String userid) {
+    return userRepository.existsByUserid(userid);
 }
 
 /**
@@ -208,6 +226,26 @@ public int updateUser(String userid, String pw, String name, String phone, Strin
     return userRepository.updateUser(userid, pw, name, phone, email, uid);
 }
 
+// 작가 신청
+@Transactional(rollbackFor = Exception.class)
+public boolean registerAuthor(Author author) {
+    try {
+        authorRepository.save(author);
+        return true;
+    } catch (Exception e) {
+        // 예외 발생 시 롤백 처리
+        // 로깅 추가 (필요시)
+        System.out.println("Error occurred while registering author: "+ e);
+        
+        // 예외를 던져서 트랜잭션이 롤백되도록 함
+        throw new RuntimeException("Failed to register author", e);
+    }
+}
+
+//uid로 author 찾기
+	public Author findAuthorByUid(int uid) {
+		return authorRepository.findAuthorByUid(uid);
+	}
 
 /**
  * 프로필 설정

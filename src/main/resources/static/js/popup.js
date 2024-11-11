@@ -20,6 +20,10 @@ function signupClosePopup() {
     document.getElementById('signupOverlay').style.display = 'none';
     document.getElementById('signup-popup').style.display = 'none';
 }
+// 회원가입 실패 팝업
+function signUpErrorPopOpen() {
+    alert("회원가입에 실패했습니다. 다시 시도해주세요."); // 실패 팝업 함수
+}
 // 아이디 찾기 팝업
 function findIdPopOpen() {
     closeOtherPopups('findId');

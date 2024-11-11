@@ -6,14 +6,14 @@ import java.util.Objects;
 public class LikeId implements Serializable {
     private static final long serialVersionUID = 1L; // serialVersionUID 필드 추가
     
-    private int itemId;
+    private int itemid;
     private int uid;
 
     // 기본 생성자
     public LikeId() {}
 
-    public LikeId(int itemId, int uid) {
-        this.itemId = itemId;
+    public LikeId(int itemid, int uid) {
+        this.itemid = itemid;
         this.uid = uid;
     }
 
@@ -22,12 +22,12 @@ public class LikeId implements Serializable {
         if (this == o) return true;
         if (!(o instanceof LikeId)) return false;
         LikeId likeId = (LikeId) o;
-        return itemId == likeId.itemId && uid == likeId.uid;
+        return itemid == likeId.itemid && uid == likeId.uid;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(itemId, uid);
+        return Objects.hash(itemid, uid);
     }
 }
 

@@ -13,14 +13,14 @@ import jakarta.transaction.Transactional;
 public interface ItemRepository extends CrudRepository<Item, Integer> {
 
 	// 작품 감상(메인화면 좋아요순) 
-	@Query("SELECT i FROM Item i ORDER BY i.viewCount DESC")
+	@Query("SELECT i FROM Item i ORDER BY i.viewcount DESC")
 	List<Item> findItemsOrderByViewCountDesc();
     
     // 작품 상세보기 
-    Item findByItemId(int itemId);
+    Item findByItemid(int itemid);
     
     // 작품 검색 
-    List<Item> findByName(String keyword);
+    List<Item> findByTitle(String keyword);
     
     // 작품 등록 
     @Modifying
@@ -32,13 +32,13 @@ public interface ItemRepository extends CrudRepository<Item, Integer> {
     @Modifying
     @Transactional
     @Query("UPDATE Item i SET i.uid = ?1 WHERE i.id = ?2")
-    int updateByUidAndItemId(int uid, int itemId);
+    int updateByUidAndItemid(int uid, int itemid);
     
     // 작품 삭제 
     @Modifying
     @Transactional
     @Query("DELETE FROM Item i WHERE i.id = ?1")
-    int deleteByItemId(int itemId);
+    int deleteByItemid(int itemid);
     
     // 작가 작품 목록(프로필페이지) 
     List<Item> getItemListByUid(int uid);

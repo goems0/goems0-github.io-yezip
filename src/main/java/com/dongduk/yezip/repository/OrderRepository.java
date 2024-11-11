@@ -16,8 +16,8 @@ public interface OrderRepository extends CrudRepository<Order, Integer> {
 	// 장바구니 버튼 클릭 (oid 반환), 상세페이지 주문버튼 클릭
     @Modifying
     @Transactional
-    @Query("INSERT INTO Order (uid, itemId, count) VALUES (?1, ?2, ?3)")
-    int createOrder(int uid, int itemId, int count);
+    @Query("INSERT INTO Order (uid, itemid, count) VALUES (?1, ?2, ?3)")
+    int createOrder(int uid, int itemid, int count);
     
     // 상품 주문
     @Modifying
