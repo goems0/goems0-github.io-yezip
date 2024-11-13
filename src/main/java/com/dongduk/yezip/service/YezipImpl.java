@@ -83,8 +83,9 @@ public Item findByItemid(int itemid) {
  * 작품 검색
  */
 
-public List<Item> findByTitle(String keyword) {
-    return itemRepository.findByTitle(keyword);
+public List<Item> findByTitleContainingOrBodyContaining(String keyword1, String keyword2) {
+    return itemRepository.findByTitleContainingOrBodyContaining(keyword1, keyword2);
+
 }
 
 /**

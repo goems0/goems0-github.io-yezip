@@ -26,8 +26,8 @@ public interface YezipFacade {
     // 작품 상세보기 
     Item findByItemid(int itemid);
     
-    // 작품 검색 
-    List<Item> findByTitle(String keyword);
+    // 작품 검색(제목, 본문)
+    List<Item> findByTitleContainingOrBodyContaining(String keyword1, String keyword2);
     
     // 작품 등록 
     int createByUid(int uid);

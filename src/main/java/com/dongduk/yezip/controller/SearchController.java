@@ -30,7 +30,7 @@ private final YezipFacade yezip;
     public String handleSearch(
             @RequestParam("keyword") String keyword,
             Model model) {
-    	List<Item> itemList = yezip.findByTitle(keyword);
+    	List<Item> itemList = yezip.findByTitleContainingOrBodyContaining(keyword, keyword);
     	model.addAttribute("itemList", itemList);
     	model.addAttribute("keyword", keyword);
         // 처리 후에 적절한 뷰로 리다이렉트 또는 포워드합니다.
