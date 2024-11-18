@@ -101,13 +101,20 @@ public class SignupController {
         }
 
         User user = new User(id, pw, name, phone, email);
-        if (check1 && check2 && yezip.registerUser(user)) {
+        if (check1 && check2) {
             result.put("success", true);
         } else {
             result.put("success", false);
-            result.put("error", "회원가입에 실패했습니다.");
+            result.put("error", "필수 이용약관을 확인해주세요.");
+            return result;
         }
-
+        if (yezip.registerUser(user)){
+            result.put("success", true);
+        } else {
+            result.put("success", false);
+            result.put("error", "회원가입에 실패하였습니다.");
+            return result;
+        }
         return result;
     }
 

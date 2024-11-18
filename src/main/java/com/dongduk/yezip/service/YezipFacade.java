@@ -96,8 +96,8 @@ public interface YezipFacade {
  // uid로 author 찾기
  	Author findAuthorByUid(int uid);
  	
-    // 프로필 설정
-//    int updateProfile(int uid, Profile profile, Author author);
+ // 프로필 설정
+ 	int updateProfile(String insta, String intro, String nickname, String school, String career, int uid);
 	
  	// uid로 주소 찾기
  	Address findAddressByUid(int uid);
@@ -105,4 +105,6 @@ public interface YezipFacade {
  	// 주소 정보 업데이트
  	boolean updateAddress(Address address);
  	
+ 	// 회원탈퇴
+ 	boolean deleteUser(User user);
 }

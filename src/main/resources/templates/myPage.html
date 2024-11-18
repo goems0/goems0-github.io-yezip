@@ -19,7 +19,7 @@
             <div class="part1">
                 <div class="rec">
                     <img class="profile-img" th:src="@{image/author/profile.png}">
-                    <div class="name">최유리</div>
+                    <div class="name" th:if="${session.username}" th:text="${session.username}">최유리</div>
                     <hr>
                     <div class="items">
                         <div class="item">
@@ -44,7 +44,7 @@
                 <div class="manage">
                     <div class="title2">활동 관리</div>
                     <div class="content"><a th:href="@{userInfo}">회원 정보</a></div><hr>
-                    <div class="content"><a th:href="@{profile-update}">프로필 설정</a></div><hr>
+                    <div class="content" th:if="${author}"><a th:href="@{profile-update}">프로필 설정</a></div><hr th:if="${author}">
                     <div class="content"><a th:href="@{order-list}">주문 내역 조회</a></div><hr>
                     <div class="content"><a th:href="@{address}">배송지 설정</a></div><hr>
                     <div class="content">배송 현황</div><hr>

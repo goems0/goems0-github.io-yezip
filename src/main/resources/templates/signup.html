@@ -46,7 +46,7 @@
           </div>
           <div class="div2">
               <div class="div3">이메일</div>
-              <input class="txt" type="text" size=70 name="email" placeholder="이메일을 입력하세요"> 
+              <input class="txt" type="text" size=70 name="email" placeholder="이메일을 입력하세요" id="emailInput"> 
               <select name="email2">
 					<option value="@naver.com">@naver.com</option>
 					<option value="@gmail.com">@gmail.com</option>
@@ -87,6 +87,15 @@
 	        event.preventDefault();
 	        
 	        const id = document.getElementById("id").value;
+	        const emailInput = document.getElementById("emailInput").value;
+            const emailSelect = document.querySelector('select[name="email2"]').value;
+
+            // 이메일 입력 값이 '직접입력'인 경우 직접 입력된 이메일 확인
+            if (emailSelect === 'input' && !emailInput.includes('@')) {
+                alert("이메일 주소에 @ 기호를 포함해 주세요.");
+                return;
+            }
+            
 	        if (!id) {
 	            alert("아이디를 입력하세요.");
 	            return;
@@ -117,9 +126,10 @@
 	                const result = await response.json();
 
 	                if (result.success) {
-	                    signUpPopOpen();
+	                	alert('회원가입 되었습니다.');
+	                	window.location.href = "/";  // 탈퇴 후 메인 페이지로 리다이렉트 (필요에 따라 변경)
 	                } else {
-	                    alert(result.error || '회원가입에 실패했습니다.');
+	                    alert(result.error);
 	                }
 	            } else {
 	                throw new Error("서버 응답이 JSON 형식이 아닙니다.");

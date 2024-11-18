@@ -254,9 +254,9 @@ public boolean registerAuthor(Author author) {
  * 프로필 설정
  */
 
-//public int updateProfile(int uid, Profile profile, Author author) {
-//    return userRepository.updateProfile(uid, profile, author);
-//}
+public int updateProfile(String insta, String intro, String nickname, String school, String career, int uid) {
+    return authorRepository.updateProfile(insta, intro, nickname, school, career, uid);
+}
 
 	// uid로 주소 찾기
 	public Address findAddressByUid(int uid) {
@@ -279,5 +279,13 @@ public boolean registerAuthor(Author author) {
 	    }
     }
 	
-	
+	// 회원 탈퇴
+	public boolean deleteUser(User user) {
+		try {
+	        userRepository.delete(user);  // 사용자 삭제
+	        return true;  // 삭제 성공 시 true 반환
+	    } catch (Exception e) {
+	        return false;  // 예외 발생 시 false 반환
+	    }
+	}
 }

@@ -21,24 +21,26 @@ import lombok.Setter;
 @Setter
 public class Author implements Serializable {
     private String insta;
-    private String career;
     private String intro;
     private String nickname;
     private String school;
+    private String career;
     
     @Id
     private int uid; 
 
     public Author() {}
-	public Author(String insta, String career, String intro, String nickname, String school, int uid) {
+
+	public Author(String insta, String intro, String nickname, String school, String career, int uid) {
 		super();
 		this.insta = insta;
-		this.career = career;
 		this.intro = intro;
 		this.nickname = nickname;
 		this.school = school;
+		this.career = career;
 		this.uid = uid;
 	}
+	
     
     
 }
