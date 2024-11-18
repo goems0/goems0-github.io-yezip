@@ -32,6 +32,10 @@ body {
     justify-content: center;
     gap: 70px;
 }
+.myPage main .part1 {
+	width: 20%;
+	margin: auto 0;
+}
 .myPage main .part1 .rec {
 	background: #ffffff;
   border-radius: 20px;
@@ -101,7 +105,6 @@ body {
   border-width: 0.73px;
   width: 40%;
   padding: 3%;
-  margin-top: 25px;
 }
 .myPage main .part2 .manage{
 	margin-bottom: 50px;

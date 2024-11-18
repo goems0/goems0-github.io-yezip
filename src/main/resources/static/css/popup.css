@@ -1,5 +1,5 @@
 .signup-popup, .findId-popup, .findPw-popup, .resetPw-popup,
-.author-popup  {
+.author-popup {
 	text-align: center;
 }
 .signup-popup .rectangle-white, .findId-popup .rectangle-white,
@@ -87,7 +87,7 @@
 .signup-popup .text3, .findPw-popup .text3 {
   margin: 20px 0px 10px 0px;
 }
-.findId-popup button {
+.findId-popup button, .totalOrder-popup button {
 	background: #000000;
   border-radius: 30px;
   align-items: center;
@@ -125,7 +125,7 @@
 .totalOrder-popup .container .text1 {
 	font-size: 28px;
 }
-.totalOrder-popup input, .totalOrder-popup select {
+.totalOrder-popup input, .totalOrder-popup select, .totalOrder-popup .payment {
 	background: #d9d9d9;
   border-radius: 30px;
   padding: 15px 20px;
@@ -141,13 +141,20 @@
 }
 .totalOrder-popup .payment {
 	background: #d9d9d9;
-	width: 90%;
+    width: auto;
+    margin: 20px 50px;
 }
 .totalOrder-popup .info-div p {
 	color: black;
+	font-size: 20px;
+	width: 150px;
+	margin: 10px 0;
+}
+.totalOrder-popup .info-div {
+	display: flex;
 }
 .totalOrder-popup .navi {
-	padding: 10px 0 0 15px;
+	margin: 5px;
 }
 .totalOrder-popup .container button {
 	font-size: 17px;

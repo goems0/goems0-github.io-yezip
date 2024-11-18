@@ -18,16 +18,16 @@ public interface LikeRepository extends CrudRepository<Like, LikeId> {
 	// 좋아요 누름 
     @Modifying
     @Transactional
-    @Query("INSERT INTO Like (uid, itemId) VALUES (?1, ?2)")
-    int createByUidAndItemId(int uid, int itemId);
+    @Query("INSERT INTO Like (uid, itemid) VALUES (?1, ?2)")
+    int createByUidAndItemid(int uid, int itemid);
     
     // 좋아요 취소 
     @Modifying
     @Transactional
-    @Query("DELETE FROM Like l WHERE l.uid = ?1 AND l.itemId = ?2")
-    int deleteLikeByUidAndItemId(int uid, int itemId);
+    @Query("DELETE FROM Like l WHERE l.uid = ?1 AND l.itemid = ?2")
+    int deleteLikeByUidAndItemid(int uid, int itemid);
     
     // 좋아요 보관함
-    @Query("SELECT i FROM Item i JOIN Like l ON i.id = l.itemId WHERE l.uid = ?1")
+    @Query("SELECT i FROM Item i JOIN Like l ON i.id = l.itemid WHERE l.uid = ?1")
     List<Item> getItemLikeListByUid(int uid);
 }

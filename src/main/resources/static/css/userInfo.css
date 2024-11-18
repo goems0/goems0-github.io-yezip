@@ -91,7 +91,7 @@ body {
     padding-left: 10px;
     font-size: 17px;
 }
-.userInfo form .submit-btn {
+.userInfo .submit-btn {
 	background: #000000;
   border-radius: 30px;
   display: flex;
@@ -103,7 +103,7 @@ body {
   margin: 50px auto 30px auto;
     cursor: pointer; /* 포인터 모양으로 변경 */
 }
-.userInfo form p.text {
+.userInfo p.text {
 	color: #ffffff;
   font-size: 20px;
 }

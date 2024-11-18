@@ -82,7 +82,13 @@
             <button class="order" type="button" onclick="totalOrderPopOpen(); return false;">전체 상품 주문</button>
         </main>
     </div>
-    
-    
+
+	<!-- 레이어 팝업 추가 -->
+	<div id="totalOrderOverlay" class="overlay"
+		onclick="totalOrderClosePopup();"></div>
+	<div id="totalOrder-popup" class="popup" style="display: none;">
+		<div th:replace="~{popup :: totalOrder-popup}"></div>
+	</div>
+
 </body>
 </html>

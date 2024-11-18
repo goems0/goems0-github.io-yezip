@@ -9,6 +9,12 @@
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 <title>검색 결과</title>
+<style>
+    .result { text-align: center;}
+    .result p, span {
+        color: white;
+    }
+</style>
 </head>
 <body>
     <div class="itemListDiv">
@@ -18,11 +24,17 @@
        <!-- 검색창 -->
        <div th:insert="~{search :: search}"></div>
        
-       <div class="title"><p class="text">검색 결과</p></div>
+       <div class="title"><p class="text">검색 결과&nbsp;&nbsp;'<span th:text="${keyword}"></span>'</p></div>
         <div class="line"></div>
        
        <!-- 검색 결과 -->
-        <div th:insert="~{itemList :: search-itemList}"></div>
+		<div class="result" th:if="${#lists.isEmpty(itemList)}">
+			<p>검색 결과가 없습니다.</p>
+		</div>
+		<div class="result" th:if="${!#lists.isEmpty(itemList)}">
+			<figure th:each="item : ${itemList}"><span th:text="${item.title}">Item Title</span></figure>
+		</div>
+		<!-- <div th:insert="~{itemList :: search-itemList}"></div> -->
     </div>
     
     <script>

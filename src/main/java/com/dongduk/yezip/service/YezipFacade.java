@@ -2,20 +2,20 @@ package com.dongduk.yezip.service;
 
 import java.util.List;
 
-import com.dongduk.yezip.domain.Item;
-import com.dongduk.yezip.domain.TotalOrder;
-import com.dongduk.yezip.domain.User;
+import org.springframework.data.repository.query.Param;
+
+import com.dongduk.yezip.domain.*;
 
 
 public interface YezipFacade {
 	// 장바구니 생성 
-	int createCartByUidAndItemId(int uid, int oid);
+	int createCartByUidAndItemid(int uid, int oid);
 	
 	// 전체 상품 주문
 	int createTotalOrder(int uid);
 	
 	// 장바구니 상품 삭제
-	int deleteCartByUidAndItemId(int uid, int ItemId);
+	int deleteCartByUidAndItemid(int uid, int ItemId);
 	
 	// 장바구니 비우기
     int deleteByUid(int uid);
@@ -24,28 +24,28 @@ public interface YezipFacade {
     List<Item> findItemsOrderByViewCountDesc();
     
     // 작품 상세보기 
-    Item findByItemId(int itemId);
+    Item findByItemid(int itemid);
     
-    // 작품 검색 
-    List<Item> findByName(String keyword);
+    // 작품 검색(제목, 본문)
+    List<Item> findByTitleContainingOrBodyContaining(String keyword1, String keyword2);
     
     // 작품 등록 
     int createByUid(int uid);
     
     // 작품 수정 
-    int updateByUidAndItemId(int uid, int itemId);
+    int updateByUidAndItemid(int uid, int itemid);
     
     // 작품 삭제 
-    int deleteByItemId(int itemId);
+    int deleteByItemid(int itemid);
     
     // 작가 작품 목록(프로필페이지) 
     List<Item> getItemListByUid(int uid);
     
     // 좋아요 누름 
-    int createLikeByUidAndItemId(int uid, int itemId);
+    int createLikeByUidAndItemid(int uid, int itemid);
     
     // 좋아요 취소 
-    int deleteLikeByUidAndItemId(int uid, int itemId);
+    int deleteLikeByUidAndItemid(int uid, int itemid);
     
     // 좋아요 보관함
     List<Item> getItemLikeListByUid(int uid);
@@ -61,8 +61,19 @@ public interface YezipFacade {
     
     // 주문 목록 조회
     List<TotalOrder> getOrderListByUid(int uid);
+    
+ // userid로 uid 찾기
+    User findByUserid(@Param("userid") String userid);
+    
+ // uid로 user 찾기
+    User findByUid(int uid);
+ 	
 	//회원가입
     boolean registerUser(User user);
+    
+    // id 중복확인
+    boolean isIdDuplicate(String userid);
+    
  // 로그인
     User findByUseridAndPw(String userid, String pw);
     
@@ -79,9 +90,21 @@ public interface YezipFacade {
     // 회원정보 수정
     int updateUser(String userid, String pw, String name, String phone, String email, int uid);
 
+    // 작가 신청
+    boolean registerAuthor(Author author);
     
-    // 프로필 설정
-//    int updateProfile(int uid, Profile profile, Author author);
+ // uid로 author 찾기
+ 	Author findAuthorByUid(int uid);
+ 	
+ // 프로필 설정
+ 	int updateProfile(String insta, String intro, String nickname, String school, String career, int uid);
 	
-	
+ 	// uid로 주소 찾기
+ 	Address findAddressByUid(int uid);
+ 	
+ 	// 주소 정보 업데이트
+ 	boolean updateAddress(Address address);
+ 	
+ 	// 회원탈퇴
+ 	boolean deleteUser(User user);
 }

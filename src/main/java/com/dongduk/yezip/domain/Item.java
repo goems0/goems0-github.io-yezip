@@ -3,8 +3,10 @@ package com.dongduk.yezip.domain;
 import java.io.Serializable;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.PrimaryKeyJoinColumn;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,20 +18,19 @@ import lombok.Setter;
 @Setter
 public class Item implements Serializable {
     @Id
-    private int itemId;
-    private String name;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "item_seq")
+    @SequenceGenerator(name = "item_seq", sequenceName = "ITEM_SEQ", allocationSize = 1)
+    private int itemid;
+    private String title;
+    private String size;
+    private String material;
+    private String tech;
+    private String productiondate;
     private int price;
     private int stock;
-    private String uploadDate;
-    private int viewCount;
-    private String size;
-    private String ingredient;
-    private String tech;
+    private String uploaddate;
+    private int viewcount;
     private String body;
-    @PrimaryKeyJoinColumn(name="cid")
-    private int cid;
-    private String imageList;
-    private String videoList;
-    @PrimaryKeyJoinColumn(name="uid")
+    private String cidlist;
     private int uid;
 }

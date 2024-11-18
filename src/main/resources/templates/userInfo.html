@@ -6,6 +6,8 @@
 <link rel="stylesheet" th:href="@{css/userInfo.css}">
 <link rel="stylesheet" th:href="@{css/login.css}">
 <meta charset="UTF-8">
+<!-- jQuery CDN 추가 -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <title>회원정보 수정</title>
 </head>
 <body>
@@ -23,44 +25,40 @@
                     <div class="part1">
                     <div class="container">
                         <div class="text"><p class="btn-text">ID</p></div>
-                        <input class="input-text" type="text" name="id" placeholder="아이디를 입력하세요">
+                        <input class="input-text" type="text" name="id" placeholder="아이디를 입력하세요" th:value="${user.userid}">
                         <button class="id-btn"><p class="btn-text">ID 중복확인</p></button>
                     </div>
                     <div class="container">
                         <div class="text"><p class="btn-text">PASSWORD</p></div>
-                        <input class="input-text" type="password" name="pw" placeholder="비밀번호를 입력하세요">
+                        <input class="input-text" type="password" name="pw" placeholder="비밀번호를 입력하세요" th:value="${user.pw}">
                     </div>
                     <div class="container">
                         <div class="text"><p class="btn-text">PASSWORD 재입력</p></div>
-                        <input class="input-text" type="password" name="pw2" placeholder="비밀번호를 입력하세요">
+                        <input class="input-text" type="password" name="confirmPw" placeholder="비밀번호를 입력하세요">
                     </div>
                     <div class="container">
                         <div class="text"><p class="btn-text">이름</p></div>
-                        <input class="input-text" type="text" name="name" placeholder="이름을 입력하세요">
+                        <input class="input-text" type="text" name="name" placeholder="이름을 입력하세요" th:value="${user.name}">
                     </div>
                 </div>
                 <hr>
                 <div class="part2">
                     <div class="container">
                         <div class="text"><p class="btn-text">전화번호</p></div>
-                        <input class="input-text" type="text" name="phone" placeholder="전화번호를 입력하세요">
+                        <input class="input-text" type="text" name="phone" placeholder="전화번호를 입력하세요" th:value="${user.phone}">
                     </div>
                     <div class="container">
                         <div class="text"><p class="btn-text">이메일</p></div>
-                        <input class="input-text" type="text" name="email" placeholder="이메일을 입력하세요">
+                        <input class="input-text" type="text" name="email" placeholder="이메일을 입력하세요" th:value="${email1 != null ? email1 : ''}">
                         <select name="email2">
-                            <option value="naver">@naver.com</option>
-                            <option value="gmail">@gmail.com</option>
-                            <option value="hanmail">@hanmail.net</option>
-                            <option value="daum">@daum.net</option>
-                            <option value="kakao">@kakao.com</option>
-                            <option value="outlook">@outlook.com</option>
-                            <option value="input">직접입력</option>
+                            <option value="@naver.com" th:selected="${email2 == '@naver.com'}">@naver.com</option>
+                            <option value="@gmail.com" th:selected="${email2 == '@gmail.com'}">@gmail.com</option>
+                            <option value="@hanmail.net" th:selected="${email2 == '@hanmail.net'}">@hanmail.net</option>
+                            <option value="@daum.net" th:selected="${email2 == '@daum.net'}">@daum.net</option>
+                            <option value="@kakao.com" th:selected="${email2 == '@kakao.com'}">@kakao.com</option>
+                            <option value="@outlook.com" th:selected="${email2 == '@outlook.com'}">@outlook.com</option>
+                            <option value="input" th:selected="${email2 == 'input'}">직접입력</option>
                         </select>
-                    </div>
-                    <div class="container">
-                        <div class="text"><p class="btn-text">배송지</p></div>
-                        <input class="input-text" type="text" name="address" placeholder="배송지를 입력하세요">
                     </div>
                 </div>
                 </div>
@@ -68,11 +66,90 @@
                 <button class="submit-btn">
                     <p class="text">수정 완료</p>
                 </button>
-                <button class="submit-btn" onclick="dropUserPopOpen(); return false;">
+			</form>
+			<button class="submit-btn" onclick="confirmDelete(); return false;">
                     <p class="text">회원 탈퇴</p>
                 </button>
-            </form>
         </main>
     </div>
+    
+    <script>
+        $(document).ready(function () {
+            // 직접입력 선택 시 커스텀 도메인 입력 필드 표시
+            $('#email2').change(function () {
+                if ($(this).val() === 'input') {
+                    $('#customEmail').removeClass('hidden').attr('name', 'email2');
+                } else {
+                    $('#customEmail').addClass('hidden').removeAttr('name');
+                }
+            });
+
+            // 비밀번호 확인 로직
+            $('#userInfoForm').on('submit', function (e) {
+                e.preventDefault(); // 기본 폼 제출 방지
+
+                const pw = $('#pw').val();
+                const confirmPw = $('#confirmPw').val();
+
+                if (pw !== confirmPw) {
+                    alert('비밀번호가 일치하지 않습니다.');
+                    return false;
+                }
+
+                // AJAX 요청
+                $.ajax({
+                    type: 'POST',
+                    url: '/userInfo',
+                    data: $(this).serialize(),
+                    success: function (response) {
+                        if (response.success) {
+                            alert('회원정보가 성공적으로 수정되었습니다.');
+                            location.reload(); // 페이지 새로고침
+                        } else {
+                            alert(response.error || '회원정보 수정에 실패하였습니다.');
+                        }
+                    },
+                    error: function () {
+                        alert('서버와의 통신 중 오류가 발생했습니다.');
+                    }
+                });
+            });
+        });
+        
+     // 이메일 직접입력 시 @ 없이 제출하지 못하게 하는 함수
+        $('#userInfoForm').on('submit', function (e) {
+            var email2 = $('#customEmail').val();
+            if ($('#email2').val() === 'input' && email2 && !email2.includes('@')) {
+                alert('이메일 주소에 @ 기호를 포함해 주세요.');
+                e.preventDefault();  // 폼 제출을 막음
+                return false;
+            }
+        });
+        
+     // 탈퇴 팝업을 띄우는 함수
+        function confirmDelete() {
+        // 회원 탈퇴 확인을 위한 alert
+        var confirmation = confirm("정말로 회원을 탈퇴하시겠습니까?");
+
+        if (confirmation) {
+            // 확인을 클릭하면 서버로 회원 탈퇴 요청
+            $.ajax({
+                type: 'POST',
+                url: '/deleteUser',  // 탈퇴 처리 URL (컨트롤러의 매핑 URL)
+                success: function(response) {
+                    if (response.success) {
+                        alert("회원 탈퇴가 완료되었습니다.");
+                        window.location.href = "/";  // 탈퇴 후 메인 페이지로 리다이렉트 (필요에 따라 변경)
+                    } else {
+                        alert("회원 탈퇴에 실패하였습니다.");
+                    }
+                },
+                error: function() {
+                    alert('서버와의 통신 중 오류가 발생했습니다.');
+                }
+            });
+        }
+    }
+    </script>
 </body>
 </html>
