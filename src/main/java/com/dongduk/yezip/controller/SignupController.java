@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.dongduk.yezip.domain.User;
 import com.dongduk.yezip.service.YezipFacade;
 
+import jakarta.servlet.http.HttpSession;
+
 
 @Controller
 public class SignupController {
@@ -26,51 +28,7 @@ public class SignupController {
     public String showSignupForm() {
         return "signup";
     }
-    /*// 회원가입
-    @PostMapping("/signup")
-    public String signup(@RequestParam("id") String id,
-                         @RequestParam("pw") String pw,
-                         @RequestParam("confirmPw") String confirmPw,
-                         @RequestParam("name") String name,
-                         @RequestParam("phone") String phone,
-                         @RequestParam("email") String email,
-                         @RequestParam("email2") String email2,
-                         // 약관 동의 2개
-                         @RequestParam(value = "yakgwan-check", defaultValue = "false") boolean check1,
-                         @RequestParam(value = "info-check", defaultValue = "false") boolean check2,
-                         Model model) {
-    	model.addAttribute("signUpSuccess", false); // 초기값 설정
-        model.addAttribute("signUpError", false);   // 초기값 설정
-        
-        if (yezip.isIdDuplicate(id)) {
-            model.addAttribute("error", "이미 사용 중인 아이디입니다.");
-            model.addAttribute("signUpError", true); // 실패 플래그 설정
-            return "signup"; // 중복된 경우 가입을 중단
-        }
-
-        if (pw.equals(confirmPw)) {
-            if (!email2.equals("input")) {
-                email = email + email2;
-            }
-
-            User user = new User(id, pw, name, phone, email);
-            if (check1 && check2) {
-                if (yezip.registerUser(user)) {
-                    model.addAttribute("signUpSuccess", true);
-                } else {
-                    model.addAttribute("signUpError", true);
-                }
-            } else {
-                model.addAttribute("error", "약관에 동의해 주세요.");
-                model.addAttribute("signUpError", true);
-            }
-        } else {
-            model.addAttribute("error", "비밀번호가 일치하지 않습니다.");
-            model.addAttribute("signUpError", true);
-        }
-
-        return "signup";
-    }*/
+    
     @PostMapping("/signup")
     @ResponseBody // JSON 형식 응답을 위해 추가
     public Map<String, Object> signup(@RequestParam("id") String id,
@@ -127,6 +85,21 @@ public class SignupController {
     	boolean result = yezip.isIdDuplicate(userid);
     	System.out.println(result);
         return result;
+    }
+    
+    // 본인 제외 아이디 중복 확인
+    @GetMapping("/check-id2")
+    @ResponseBody
+    public boolean checkIdDuplicate2(@RequestParam String userid, HttpSession session) {
+    	String currentId = (String)session.getAttribute("userid");
+    	System.out.println("현재아이디: "+currentId+ ", 바꾸려는아이디: "+userid);
+    	if (currentId == null) {
+            throw new IllegalStateException("로그인되지 않은 사용자입니다.");
+        }
+        if (currentId.equals(userid)) {
+            return false; // 본인의 ID는 중복 아님
+        }
+        return yezip.isIdDuplicate(userid); // 중복되면 true
     }
 
 }
