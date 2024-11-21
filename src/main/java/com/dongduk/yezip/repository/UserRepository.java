@@ -24,10 +24,10 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     User findByUseridAndPw(String userId, String pw);
     
     // 아이디 찾기
-    int findByNameAndPhone(String name, String phone);
+    User findByNameAndPhone(String name, String phone);
     
     // 비밀번호 찾기
-    int findByUseridAndNameAndPhone(String userid, String name, String phone);
+    User findByUseridAndNameAndPhone(String userid, String name, String phone);
     
  // 비밀번호 재설정
     @Modifying

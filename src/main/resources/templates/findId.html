@@ -19,26 +19,54 @@
 		<div class="line"></div>
 
 		<!-- 아이디 찾기 폼 -->
-		<form class="findIdForm" method="post">
+		<form id="findIdForm" class="findIdForm" method="post" onsubmit="return findIdPopHandler(event);">
 			<div class="div2">
 				<div class="div3">이름</div>
-				<input class="txt" type="text" size=70 name="name"
-					placeholder="이름을 입력하세요">
+				<input class="txt" type="text" name="name" placeholder="이름을 입력하세요">
 			</div>
 			<div class="div2">
 				<div class="div3">전화번호</div>
-				<input class="txt" type="text" size=70 name="phone"
-					placeholder="전화번호를 입력하세요">
+				<input class="txt" type="text"name="phone" placeholder="전화번호를 입력하세요">
 			</div>
 
-			<button class="findId-btn" onclick="findIdPopOpen(); return false;">
+			<button class="findId-btn">
 				<p>아이디 찾기</p>
 			</button>
 		</form>
 		
-		<!-- 레이어 팝업 -->
-        <div th:insert="~{popup :: layer}"></div>
 	</div>
     
+    <script>
+        // 아이디 찾기 핸들러
+        function findIdPopHandler(event) {
+            event.preventDefault(); // 폼의 기본 제출 동작을 막음
+
+            const form = document.getElementById('findIdForm');
+            const formData = new FormData(form);
+
+            // AJAX 요청을 통해 서버와 통신
+            fetch('/findId', {
+                method: 'POST',
+                body: new URLSearchParams(formData),
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    if (data.success) {
+                        // 서버에서 받은 데이터를 팝업에 반영
+                        document.querySelector('#findId-popup .text2').textContent = data.userId;
+                        findIdPopOpen(); // 팝업 열기
+                    } else {
+                        alert(data.message); // 실패 시 메시지 표시
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    alert('서버와의 통신 중 오류가 발생했습니다.');
+                });
+        }
+    </script>
 </body>
 </html>

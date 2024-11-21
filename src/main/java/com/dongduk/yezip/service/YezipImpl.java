@@ -203,14 +203,14 @@ public User findByUseridAndPw(String userid, String pw) {
 /**
  * 아이디 찾기
  */
-public int findByNameAndPhone(String name, String phone) {
+public User findByNameAndPhone(String name, String phone) {
     return userRepository.findByNameAndPhone(name, phone);
 }
 
 /**
  * 비밀번호 찾기
  */
-public int findByUseridAndNameAndPhone(String userid, String name, String phone) {
+public User findByUseridAndNameAndPhone(String userid, String name, String phone) {
     return userRepository.findByUseridAndNameAndPhone(userid, name, phone);
 }
 

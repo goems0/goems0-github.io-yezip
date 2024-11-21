@@ -34,14 +34,16 @@ body {
     color: #ffffff;
   text-align: left;
   font-size: 36px;
-  width: 400px;
+  width: 20%;
 }
 .findId input.txt {
     background: #ffffff;
   border-radius: 30px;
   box-shadow: none;
   padding-left: 20px;
-  height: 50px;
+  height: 60px;
+  font-size: 20px;
+  width: 35%;
 }
 .findId .findId-btn {
   background: #000000;

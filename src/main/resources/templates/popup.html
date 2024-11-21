@@ -10,9 +10,11 @@
 		<div class="rectangle-white">
 			<div class="text1">YEZIP의 회원이 되신 것을</div>
 			<div class="text2">축하드립니다!</div>
-			<a th:href="@{/}"><button type="button">시작하기</button></a>
-			<div class="text3">내가 작가로 활동하고 싶다면?</div>
-			<a th:href="@{applicationAuthor}"><button type="button"><img th:src="@{image/signup/arrow.png}">&nbsp;&nbsp;작가 신청하기</button></a>
+			<a th:href="@{/}"><button type="button">메인으로</button></a>
+			<br><br>
+			<a onclick="loginPopOpen(); return false;"><button type="button">로그인</button></a>
+			<!-- <div class="text3">내가 작가로 활동하고 싶다면?</div>
+			<a th:href="@{applicationAuthor}"><button type="button"><img th:src="@{image/signup/arrow.png}">&nbsp;&nbsp;작가 신청하기</button></a> -->
 		</div>
 	</div>
 	

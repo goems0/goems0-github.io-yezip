@@ -19,26 +19,51 @@
         <div class="line"></div>
 
         <!-- 비밀번호 재설정 폼 -->
-        <form class="resetPwForm" method="post">
+        <form id="resetPwForm" class="resetPwForm" method="post" onsubmit="return resetPwPopHandler(event);">
             <div class="div2">
                 <div class="div3">새 비밀번호</div>
-                <input class="txt" type="text" size=70 name="newPw"
-                    placeholder="비밀번호를 입력하세요">
+                <input class="txt" type="text" size=70 name="newPw" placeholder="비밀번호를 입력하세요">
             </div>
             <div class="div2">
                 <div class="div3">새 비밀번호 확인</div>
-                <input class="txt" type="text" size=70 name="confirmPw"
-                    placeholder="비밀번호를 입력하세요">
+                <input class="txt" type="text" size=70 name="confirmPw" placeholder="비밀번호를 입력하세요">
             </div>
 
-            <button class="resetPw-btn" type="button" onclick="resetPwPopOpen(); return false;">
+            <button class="resetPw-btn">
                 <p>변경하기</p>
             </button>
         </form>
-        
-        <!-- 레이어 팝업 -->
-        <div th:insert="~{popup :: layer}"></div>
     </div>
     
+    <script>
+        // 비밀번호 찾기 핸들러
+        function resetPwPopHandler(event) {
+            event.preventDefault(); // 폼의 기본 제출 동작을 막음
+
+            const form = document.getElementById('resetPwForm');
+            const formData = new FormData(form);
+
+            // AJAX 요청을 통해 서버와 통신
+            fetch('/resetPw', {
+                method: 'POST',
+                body: new URLSearchParams(formData),
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    if (data.success) {
+                        resetPwPopOpen(); // 팝업 열기
+                    } else {
+                        alert(data.message); // 실패 시 메시지 표시
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    alert('서버와의 통신 중 오류가 발생했습니다.');
+                });
+        }
+    </script>
 </body>
 </html>

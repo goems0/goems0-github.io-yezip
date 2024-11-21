@@ -7,6 +7,8 @@
 <link rel="stylesheet" th:href="@{css/popup.css}">
 <link rel="stylesheet" th:href="@{js/popup.js}">
 <meta charset="UTF-8">
+<!-- jQuery CDN 추가 -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <title>sign up</title>
 </head>
 <body>
@@ -126,8 +128,7 @@
 	                const result = await response.json();
 
 	                if (result.success) {
-	                	alert('회원가입 되었습니다.');
-	                	window.location.href = "/";  // 탈퇴 후 메인 페이지로 리다이렉트 (필요에 따라 변경)
+	                    signupPopOpen();
 	                } else {
 	                    alert(result.error);
 	                }
